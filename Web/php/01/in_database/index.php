@@ -6,12 +6,12 @@ require_once 'config.php';
         <label>
             <select name="tip">
                 <option>Всички</option>
-                <?php
-                foreach ($types as $type) {
-                    echo "<option>" . $type . "</option>";
-                }
+				<?php
+				foreach ($types as $type) {
+					echo "<option>" . $type . "</option>";
+				}
 
-                ?>
+				?>
             </select>
         </label>
         <input type="submit" name="ok"/>
@@ -26,12 +26,12 @@ require_once 'config.php';
 $rows = $dbc->query("SELECT * FROM `rows`");
 $suma = 0;
 foreach ($rows as $line) {
-    $line = trim($line);
-    $razhod = explode("!", $line)[0];
-    $cena = explode("!", $line)[1];
-    $tip = explode("!", $line)[2];
-    $suma += doubleval($cena);
-    echo '<tr><td>' . $razhod . '</td><td>' . $cena . '</td><td>' . $types[intval($tip)] . '</td></tr>';
+
+	$razhod = $line["name"];
+	$cena = $line["price"];
+	$tip = $line["category"];
+	$suma += doubleval($cena);
+	echo '<tr><td>' . $razhod . '</td><td>' . $cena . '</td><td>' . $types[intval($tip)] . '</td></tr>';
 }
 echo "</table>";
-echo "Сума: " . $suma;
+echo "Сума: " . "$" . $suma;
