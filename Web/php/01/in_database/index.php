@@ -24,8 +24,10 @@ require_once 'config.php';
         </tr>
 <?php
 //TODO GET ALL ROWS FROM DATABASE
+$rows = $dbc->query("SELECT * FROM `rows`");
+
 $suma = 0;
-foreach ($data as $line) {
+foreach ($rows as $line) {
     $line = trim($line);
     $razhod = explode("!", $line)[0];
     $cena = explode("!", $line)[1];
