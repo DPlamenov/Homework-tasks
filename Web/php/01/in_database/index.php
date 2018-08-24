@@ -23,9 +23,7 @@ require_once 'config.php';
             <td>Тип</td>
         </tr>
 <?php
-//TODO GET ALL ROWS FROM DATABASE
 $rows = $dbc->query("SELECT * FROM `rows`");
-
 $suma = 0;
 foreach ($rows as $line) {
     $line = trim($line);
