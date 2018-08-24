@@ -1,3 +1,3 @@
 <?php
-//TODO GET DATABASE OBJECT (CONNECT)
+$dbc = new mysqli("localhost","root","","database");
 $types = ["Храна", "Транспорт", "Други"];
