@@ -11,6 +11,7 @@ public class Main {
         JLabel welcome_label = new JLabel("Welcome");
         welcome_label.setHorizontalAlignment(SwingConstants.CENTER);
         welcome_label.setVerticalAlignment(SwingConstants.TOP);
+        JButton jButton = new JButton("button");
         windows.add(welcome_label);
     }
 }
