@@ -8,4 +8,4 @@
      - First param will be url, first part of second param will be controller and second part will be method <br>
      - To return view write <code>return Base::View('Welcome')</code> <br>
   3. Controllers is php class with method & namespace <br>
-  4. View is html file. <br>
+  4. View is html php. <br>
