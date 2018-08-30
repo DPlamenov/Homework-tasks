@@ -19,10 +19,11 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Click");            
+            MessageBox.Show("Click");
+            Close();
         }
 
-
+         
         
     }
 }
