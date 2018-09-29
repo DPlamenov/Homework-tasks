@@ -10,8 +10,9 @@ public class RectangleArea {
 
        int n = Integer.parseInt(scanner.nextLine());
        String dollars = "$";
-
-
+       for(int i = 0;i <= n;i++){
+            System.out.println(dollars.repeat(i));
+       }
 
     }
 }
