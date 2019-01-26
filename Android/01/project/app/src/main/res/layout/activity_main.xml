@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/cityname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:ems="6"
+        android:inputType="textPersonName"
+        android:text="City Name"
+       />
+    <EditText
+        android:id="@+id/citypopulation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:ems="6"
+        android:layout_marginLeft="130dp"
+        android:inputType="textPersonName"
+        android:text="City Population"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/citypopulation"
+        android:text="Add"/>
+
+
+
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/cityname"
+        tools:context="com.example.mitko.myapp.MainActivity">
+
+
+    </ListView>
+
+</RelativeLayout>
+
+
+
+
