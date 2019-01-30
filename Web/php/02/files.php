@@ -13,10 +13,13 @@ if ($_SESSION['islogged'] != true) {
         <th>Download</th>
     </tr>
     <?php
-    $file = file('data.txt');
-    foreach ($file as $value) {
-        $split_value = explode('|', $value);
-        echo '<tr><td>'.$split_value[1].'</td><td><a href="'.$split_value[2].'" download="download">Download</a></td></tr>';
+    if (file_exists('data.txt')) {
+        $file = file('data.txt');
+        foreach ($file as $value) {
+            $split_value = explode('|', $value);
+            echo '<tr><td>' . $split_value[1] . '</td><td><a href="' . $split_value[2] . '" download="download">Download</a></td></tr>';
+        }
     }
+
     ?>
 </table>
