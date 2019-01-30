@@ -9,11 +9,6 @@ if (@$_SESSION['islogged'] != true) {
         <input type="submit"/>
     </form>
     <?php
-}else{
-    ?>
-    <span>Logged</span>
-    <a href="logout.php">Logout</a>
-    <?php
 }
 
 
@@ -23,6 +18,8 @@ if (isset($_POST['username'])) {
 
     if ($username == "user" && $password == "qwerty") {
         $_SESSION['islogged'] = true;
-        header("Location: index.php");
+        header("Location: files.php");
+    } else {
+        echo 'Error username or password.';
     }
 }
