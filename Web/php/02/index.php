@@ -9,6 +9,8 @@ if (@$_SESSION['islogged'] != true) {
         <input type="submit"/>
     </form>
     <?php
+}else{
+    header('Location: files.php');
 }
 
 
