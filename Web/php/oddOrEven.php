@@ -1,5 +1,5 @@
 <body style="background-color: #cccccc">
-    <form method="post" action="index.php">
+    <form method="post" action="oddOrEven.php">
         <input type="number" name="number" />
         <input type="submit"/>
     </form>
