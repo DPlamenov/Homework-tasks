@@ -5,10 +5,13 @@ namespace DTO;
 
 class SubjectDTO
 {
+    /**
+     * @var string
+     */
     private $subject_name;
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getSubjectName()
     {
@@ -16,7 +19,7 @@ class SubjectDTO
     }
 
     /**
-     * @param mixed $subject_name
+     * @param string $subject_name
      */
     public function setSubjectName($subject_name): void
     {
