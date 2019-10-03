@@ -1,4 +1,4 @@
-package com.company.NestedConditionalStatementsMoreExercises;
+package NestedConditionalStatementsMoreExercises;
 
 import java.util.Scanner;
 
@@ -9,7 +9,6 @@ public class BikeRace {
         int senior = Integer.parseInt(scanner.nextLine());
         String track = scanner.nextLine();
 
-        //trail	cross-country	downhill	road
         double total = 0;
 
         double priceForJunior = 0;

@@ -1,4 +1,4 @@
-package com.company.NestedConditionalStatementsMoreExercises;
+package NestedConditionalStatementsMoreExercises;
 
 import java.util.Scanner;
 
@@ -15,11 +15,6 @@ public class MatchTickets {
         } else if (category.equalsIgnoreCase("normal")) {
             total = people * 249.99;
         }
-        //•	От 1 до 4 – 75% от бюджета.
-        //•	От 5 до 9 – 60% от бюджета.
-        //•	От 10 до 24 – 50% от бюджета.
-        //•	От 25 до 49 – 40% от бюджета.
-        //•	50 или повече – 25% от бюджета.
         if (people <= 4) {
             total += 0.75 * budget;
         } else if (people <= 9) {

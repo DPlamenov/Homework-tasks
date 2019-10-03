@@ -1,4 +1,4 @@
-package com.company.NestedConditionalStatementsMoreExercises;
+package NestedConditionalStatementsMoreExercises;
 
 import java.util.Scanner;
 
