@@ -1,4 +1,4 @@
-package com.company.ConditionalStatementsMoreExercises;
+package ConditionalStatementsMoreExercises;
 
 import java.util.Scanner;
 
