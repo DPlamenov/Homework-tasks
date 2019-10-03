@@ -1,4 +1,4 @@
-package com.company.ConditionalStatementsLab;
+package ConditionalStatementsLab;
 import java.util.Scanner;
 
 public class AreaofFigures {
