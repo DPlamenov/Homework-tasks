@@ -1,6 +1,6 @@
-package com.company.SimpleOperationsandCalculationsMoreExercises;
+package SimpleOperationsandCalculationsMoreExercises;
 
-        import java.util.Scanner;
+import java.util.Scanner;
 
 public class VegetableMarket {
     public static void main(String[] args) {

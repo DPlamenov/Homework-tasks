@@ -1,4 +1,4 @@
-package com.company.SimpleOperationsandCalculationsMoreExercises;
+package SimpleOperationsandCalculationsMoreExercises;
 
 import java.util.Scanner;
 
