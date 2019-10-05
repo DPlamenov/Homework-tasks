@@ -10,7 +10,7 @@ public class Sequence2k1 {
 
         while (n <= number){
             System.out.println(n);
-            n = number * 2 + 1;
+            n = n * 2 + 1;
         }
     }
 }
