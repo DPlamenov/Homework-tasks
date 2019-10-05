@@ -28,7 +28,7 @@ public class ExamPreparation {
         if(command.equalsIgnoreCase("Enough")){
             System.out.printf("Average score: %.2f%n", average / grades);
             System.out.printf("Number of problems: %d%n", grades);
-            System.out.printf("Last problems: %s", name);
+            System.out.printf("Last problem: %s", name);
         }
     }
 }
