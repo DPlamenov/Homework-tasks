@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Walking {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String command = "";
+        String command;
         int totalSteps = 0;
         boolean goingHome = false;
         boolean isGoalReached = false;
@@ -34,7 +34,7 @@ public class Walking {
             }
         }
         if (isGoalReached) {
-            System.out.println("Goal reached! Good job!'");
+            System.out.println("Goal reached! Good job!");
         }
     }
 }
