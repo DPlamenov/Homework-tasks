@@ -26,8 +26,7 @@ public class ChristmasDecoration {
             }
 
             command = scanner.nextLine();
-        }
-        if (command.equals("Stop")) {
+        }if (command.equals("Stop")) {
             System.out.printf("Money left: %d", budget);
         }
 
