@@ -7,28 +7,28 @@ public class ChristmasDecoration {
         Scanner scanner = new Scanner(System.in);
         int budget = Integer.parseInt(scanner.nextLine());
         String command = scanner.nextLine();
-        double left = budget;
-        while (!"Stop".equals(command)){
+
+        while (!command.contains("Stop")) {
             String object = command;
             int price = 0;
-            object = object.toLowerCase();
-            for (int i = 0; i < object.length() ; i++) {
-                 if(!String.valueOf(object.charAt(i)).equals(" ")){
-                     price += (int) object.charAt(i);
-                 }
+            for (int i = 0; i < object.length(); i++) {
+
+                price += object.charAt(i);
             }
-            if(left >= price){
-                left -= price;
+            budget -= price;
+            if (budget >= 0) {
                 System.out.printf("Item successfully purchased!%n");
-            }else {
-                System.out.println("Not enough money!");
-                break;
+
+            } else {
+                System.out.print("Not enough money!");
+                return;
+
             }
 
             command = scanner.nextLine();
         }
-        if(command.equals("Stop")){
-            System.out.printf("Money left: %.0f", left);
+        if (command.equals("Stop")) {
+            System.out.printf("Money left: %d", budget);
         }
 
     }
