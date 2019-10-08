@@ -14,7 +14,7 @@ public class EqualPairs {
             int n1 = Integer.parseInt(scanner.nextLine());
             int n2 = Integer.parseInt(scanner.nextLine());
             sum = n1 + n2;
-            if(i > 1){
+            if (i > 1) {
                 diff = Math.abs(sum - prevSum);
             }
             if (diff > maxDiff) {
@@ -26,9 +26,9 @@ public class EqualPairs {
         }
 
         if (maxDiff == 0) {
-            System.out.printf("Yes, value = %d", prevSum);
+            System.out.printf("Yes, value=%d", prevSum);
         } else {
-            System.out.printf("No, diff = %d", maxDiff);
+            System.out.printf("No, maxdiff=%d", maxDiff);
         }
 
     }
