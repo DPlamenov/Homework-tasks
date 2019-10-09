@@ -1,4 +1,4 @@
-package PBExam.ProgrammingBasicsOnlineExam6and7July2019;
+package PBExam.ProgrammingBasicsOnlineExam27and28July2019;
 
 import java.util.Scanner;
 
