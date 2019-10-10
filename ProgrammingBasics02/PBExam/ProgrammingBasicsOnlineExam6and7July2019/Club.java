@@ -9,10 +9,9 @@ public class Club {
         String command;
         double sum = 0;
         while (!"Party!".equals(command = scanner.nextLine())){
-            String cocktail = command;
             int cocktailNumber = Integer.parseInt(scanner.nextLine());
 
-            int cocktailPrice = cocktail.length();
+            int cocktailPrice = command.length();
             double total = cocktailPrice * cocktailNumber;
             if(total %2 != 0){
                 total *= 0.75;

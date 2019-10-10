@@ -13,10 +13,9 @@ public class Abs {
                 nums[i] = Math.abs(Integer.parseInt(strings[i]));
             } else {
                 nums[i] = Integer.parseInt(strings[i]);
+                nums[i] -= nums[i] * 2;
             }
         }
-
-
         for (int n : nums
         ) {
             System.out.println(n);
