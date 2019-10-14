@@ -1,4 +1,4 @@
-package ExamPreparation;
+package ExamPreparation.fromExercises;
 
 import java.util.Scanner;
 
