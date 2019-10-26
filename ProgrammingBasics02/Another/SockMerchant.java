@@ -14,8 +14,6 @@ public class SockMerchant {
         //integerList.add(1, 12);
 
         for (int item : ar) {
-
-            //nt nextValue = 0;
             int nextValue = myArr[item] + 1;
             myArr[item] = nextValue;
         }

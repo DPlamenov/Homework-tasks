@@ -1,6 +1,5 @@
 $('document').ready(function () {
-
-        switch (new Date().getDay()) {
+     switch (new Date().getDay()) {
             case 0:
                 day = "Sunday";
                 break;

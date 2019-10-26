@@ -1,4 +1,4 @@
-package com.company.ExamPreparation;
+package ExamPreparation;
 
 import java.util.Scanner;
 
@@ -7,10 +7,9 @@ public class Darts {
         Scanner scanner = new Scanner(System.in);
         String player_name = scanner.nextLine();
         String command = scanner.nextLine();
-        int start_points = 301;
-        int current_points = start_points;
-        int unsuccessful = 0;
+        int current_points = 301;
         int successful = 0;
+        int unsuccessful = 0;
         boolean retire = false;
         while (!"Retire".equals(command) && current_points >= 0) {
             int give_points = 0;
