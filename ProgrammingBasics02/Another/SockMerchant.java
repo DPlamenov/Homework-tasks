@@ -10,7 +10,7 @@ public class SockMerchant {
     private static int sockMerchant(int n, int[] ar) {
         int x = 0;
         //List<Integer> integerList = new ArrayList<>();
-        int[] myArr = new int[51];
+        int[] myArr = new int[0b110011];
         //integerList.add(1, 12);
 
         for (int item : ar) {
