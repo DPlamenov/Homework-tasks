@@ -3,9 +3,8 @@ function f(radius, height) {
     let c = height * height + radius * radius;
     c = Math.sqrt(c);
     let area = (radius + c) * radius * Math.PI;
-    volume = volume.toFixed(4);
     area = area.toFixed(4);
 
-    console.log("volume = " + volume);
+    console.log("volume = " + volume.toFixed(4));
     console.log("area = " + area);
 }
