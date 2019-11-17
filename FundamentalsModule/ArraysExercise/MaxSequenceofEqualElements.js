@@ -13,8 +13,7 @@ function f(arr) {
                 maxLength = length;
                 endIndex = i + 1;
             }
-        }
-        else {
+        } else {
             if (maxLength < length) {
                 maxLength = length;
 
@@ -31,8 +30,6 @@ function f(arr) {
     }
     console.log(result);
 }
-
-
 
 
 // //[2, 1, 1, 2, 3, 3, 2, 2, 2, 1]	2 2 2
