@@ -1,4 +1,4 @@
-let arr = [1, 1, 2, 4];
-let newArray = arr.slice(arr.length - 1, 5);
-//console.log(arr);
-console.log(newArray);
+const numbers = [41, 1, 2, 4];
+let currentLength = numbers.unshift(29);
+console.log(currentLength);
+console.log(numbers);

@@ -1,4 +1,2 @@
-let nums = [4, 2, 53, 6, 43, 3];
-nums = nums.filter((e) => e !== 53);
-
-console.log(nums);
+let names = [ 'Allie', 'George' ];
+console.log(Math.ceil(3.0 / 2.0));
