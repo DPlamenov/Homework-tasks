@@ -1,5 +1,4 @@
-const arr = [10, 10, 10];
-//arr.reverse();
-let a = arr.every(value => value === arr[0]);
-console.log(a);
-console.log(arr);
+let nums = [4, 2, 53, 6, 43, 3];
+nums = nums.filter((e) => e !== 53);
+
+console.log(nums);
