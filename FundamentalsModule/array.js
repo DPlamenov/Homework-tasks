@@ -1,4 +1,8 @@
-let nums = [120, 130, 140, 70];
-let a = nums.filter(function (value) {
-    return value > 50;
+let arr = [20, 50, 11, 17, 88, 71, 81, 49, 37];
+let resultOfOperation = arr.sort(function (a, b) {
+    return b - a;
 });
+
+
+console.log(resultOfOperation);
+console.log(arr);
