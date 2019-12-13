@@ -66,15 +66,11 @@ function f(arr) {
                     count++;
                 }
             }
-
             let result = count + " sections need repair.";
             console.log(result);
-
         }
         counter++;
     }
-
     console.log("Pirate ship status: " + statusPirate);
     console.log("Warship status: " + statusWarShip);
-
 }
