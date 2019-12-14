@@ -69,13 +69,3 @@ function solve(input) {
 
     }
 }
-
-
-solve(['2', '!Send!:[IvanisHere]', '*Time@:[Itis5amAlready]']);
-console.log('---');
-solve([
-    '3',
-    'go:[outside]',
-    '!drive!:YourCarToACarWash',
-    '!Watch!:[LordofTheRings]'
-]);
