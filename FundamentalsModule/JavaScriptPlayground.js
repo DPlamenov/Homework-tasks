@@ -1,10 +1,3 @@
-let obj = {
-    'name': 'Peter'
-}
+function x() {
 
-function getName() {
-    let f = () => this.name;
-    return f();
 }
-
-console.log(getName.call(obj));
