@@ -1,17 +1,19 @@
-function pow(n, power) {
-    let result = 1;
-    let negative = false;
-    if (power < 0) {
-        negative = true;
-    }
-    power = Math.abs(power);
-    for (let i = 1; i <= power; i++) {
-        result *= n;
-    }
-    if (power % 2 !== 0 && negative) {
-        result -= result * 2;
-    }
-    return result;
-}
-
-console.log(pow(3, -3));
+let student = function () {
+    let studentName = "Petar";
+    let studentAge = 24;
+    let getStudentName = function () {
+        return studentName;
+    };
+    let getStudentAge = function () {
+        return studentAge;
+    };
+    let setStudentName = function (_studentName) {
+        studentName = _studentName;
+    };
+    let setStudentAge = function (_studentAge) {
+        studentAge = _studentAge;
+        return studentAge;
+    };
+    return {getStudentName, getStudentAge, setStudentName, setStudentAge};
+}();
+console.log(student);
