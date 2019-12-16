@@ -1,3 +1,4 @@
+//Mid Exam
 function solve(input) {
     input = input.map(Number);
     let neededExp = input.shift();

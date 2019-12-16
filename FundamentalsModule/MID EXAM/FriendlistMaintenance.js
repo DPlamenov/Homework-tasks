@@ -1,3 +1,4 @@
+//Mid Exam
 function solve(input) {
     let username = input.slice(0, 1)[0].split(', ');
     let command = input.slice(1);
