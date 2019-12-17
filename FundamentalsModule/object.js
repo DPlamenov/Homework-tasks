@@ -7,4 +7,5 @@ let people = {
 for (let key in people) {
     console.log(`${key} -> ${people[key]}`);
 }
-console.log(people);
+
+console.log(JSON.stringify(people));
