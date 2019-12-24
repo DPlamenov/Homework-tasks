@@ -7,3 +7,4 @@ let a = function () {
     return true;
 };
 console.log(a());
+console.log([20, 40]);
