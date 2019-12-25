@@ -9,3 +9,4 @@ for (let key in people) {
 }
 
 console.log(JSON.stringify(people));
+console.log(people.hasOwnProperty('name'));
