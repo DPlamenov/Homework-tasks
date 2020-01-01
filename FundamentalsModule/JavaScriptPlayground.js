@@ -1,3 +1,3 @@
-function solve(input) {
-    console.log(input);
-}
+let a = 2.5 * NaN;
+
+console.log(a);
