@@ -36,9 +36,4 @@ function solve(input) {
             console.log(`You crafted ${parts.join('')}!`);
         }
     });
-
-    function checkIndexes(index, array) {
-        return index >= 0 && index < array.length;
-
-    }
 }

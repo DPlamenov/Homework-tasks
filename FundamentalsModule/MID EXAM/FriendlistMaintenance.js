@@ -1,4 +1,3 @@
-//Mid Exam
 function solve(input) {
     let username = input.slice(0, 1)[0].split(', ');
     let command = input.slice(1);
@@ -36,28 +35,3 @@ function solve(input) {
     console.log("Lost names: " + lost);
     console.log(username.join(' '));
 }
-
-//
-// solve([
-//     'Mike, John, Eddie',
-//     'Blacklist Mike',
-//     'Error 0',
-//     'Error 1',
-//     'Change 2 Mike123',
-//     'Report'
-// ]);
-
-solve(['Mike, John, Eddie, William',
-    'Blacklist Mike',
-    'Error 1',
-    'Blacklist Eddie',
-    'Error 3',
-    'Report']);
-solve([
-    'Mike, John, Eddie',
-    'Blacklist Mike',
-    'Error 0',
-    'Error 1',
-    'Change 2 Mike123',
-    'Report'
-]);

@@ -33,22 +33,4 @@ function solve(input) {
             console.log(`Frogs: ${frogs.reverse().join(' ')}`);
         }
     });
-
 }
-
-solve([
-    'Blake Muggy Kishko',
-    'Join Kvachko',
-    'Dive 0',
-    'First 10',
-    'Print Reversed'
-]);
-
-solve([
-    'A B C D E F',
-    'Join G',
-    'Jump Q 3',
-    'Last 3',
-    'Dive 2',
-    'Print Normal'
-]);

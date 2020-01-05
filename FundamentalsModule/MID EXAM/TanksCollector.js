@@ -1,4 +1,3 @@
-//Mid Exam
 function solve(input) {
     let tanks = input.shift().split(', ');
     let numbersOfCommand = Number(input.shift());

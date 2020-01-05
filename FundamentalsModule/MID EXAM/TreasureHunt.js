@@ -1,4 +1,3 @@
-//Mid Exam
 function solve(input) {
     let chest = input.shift().split('|');
     let element = input.shift();

@@ -1,4 +1,3 @@
-//Mid Exam
 function solve(input) {
     let collected = 0;
     for (let i = 1; i <= input[0]; i++) {

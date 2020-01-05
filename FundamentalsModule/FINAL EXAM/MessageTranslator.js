@@ -1,4 +1,3 @@
-//Final Exam
 function solve(input) {
     function isValid(command) {
         let firstValid = false;
