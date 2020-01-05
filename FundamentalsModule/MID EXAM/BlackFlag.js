@@ -18,11 +18,3 @@ function solve(input) {
         console.log(`Collected only ${percentage.toFixed(2)}% of the plunder.`);
     }
 }
-
-solve([5, 40, 100]);
-solve([10, 20, 380]);
-
-function f(a1) {
-    console.log(a1[0], a1[1], a1[2]);
-
-}

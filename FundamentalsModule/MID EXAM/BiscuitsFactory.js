@@ -22,7 +22,3 @@ function solve(input) {
         console.log(`You produce ${percentage} percent less biscuits.`);
     }
 }
-
-solve([ '65', '12', '26000' ]);
-
-solve(['78', '8', '16000']);
