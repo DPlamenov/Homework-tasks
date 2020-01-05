@@ -30,9 +30,9 @@ function solve(input) {
                 if (secondPart.slice(1, secondPart.length - 1).length >= 8) {
                     result.push(secondPart.split('').slice(1, secondPart.length - 1).join(''));
                     let isOnlyAlpha = secondPart.split('').slice(1, secondPart.length - 1).every(function (value, index, array) {
-                       return ((value.charCodeAt(0) >= 65 && value.charCodeAt(0) <= 90) || (value.charCodeAt(0) >= 97 && value.charCodeAt(0) <= 122))
+                        return ((value.charCodeAt(0) >= 65 && value.charCodeAt(0) <= 90) || (value.charCodeAt(0) >= 97 && value.charCodeAt(0) <= 122))
                     });
-                    if(isOnlyAlpha){
+                    if (isOnlyAlpha) {
                         secondValid = true;
                     }
 
@@ -64,7 +64,7 @@ function solve(input) {
             let ascii = valid[2].split('').map(el => el.charCodeAt(0)).join(' ');
             msgOutput += ascii;
             console.log(msgOutput);
-        }else{
+        } else {
             console.log("The message is invalid");
         }
 
