@@ -1,5 +1,4 @@
-let pattern = /(?<name>\w+)/g;
-let str = 'Ivan';
-
-console.log(pattern.exec(str));
-
+let pattern = /\b(?<name>\w+)@\1\b/g;
+let str = 'Ivan@Ivan';
+str = str.replace(/[A-z]+/g, 'Secret');
+console.log(str);
