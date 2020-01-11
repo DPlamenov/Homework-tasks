@@ -1,4 +1,6 @@
-let pattern = /\b(?<name>\w+)@\1\b/g;
-let str = 'Ivan@Ivan';
-str = str.replace(/[A-z]+/g, 'Secret');
-console.log(str);
+let pattern = /\s+/gi;
+let string = 'This is   example   of some   string   ';
+
+let output = string.split(pattern);
+console.log(string);
+console.log(output);
