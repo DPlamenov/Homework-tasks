@@ -4,7 +4,8 @@ function pyramid(base, increment) {
     let totalMarble = 0;
     let totalLapis = 0;
     let totalGold;
-    let row = 0;
+    let row = 1;
+
 
     while (base > 2) {
         let marbel = base * 4 - 4;
@@ -26,7 +27,7 @@ function pyramid(base, increment) {
     let marble = Math.ceil(totalMarble * increment);
     let lapis = Math.ceil(totalLapis * increment);
     totalGold = Math.ceil(gold);
-    let totalHeight = Math.floor(row * increment);
+    let totalHeight = Math.floor((row - 1) * increment);
 
     console.log(`Stone required: ${stone}`);
     console.log(`Marble required: ${marble}`);
@@ -34,3 +35,5 @@ function pyramid(base, increment) {
     console.log(`Gold required: ${totalGold}`);
     console.log(`Final pyramid height: ${totalHeight}`);
 }
+
+pyramid(23, 0.5);
