@@ -12,8 +12,11 @@ array.forEach(function (element) {
     console.log(element);
 })
 
-if (a === 5) {
+let testA = true;
+let testB = 1;
 
+if (testA != testB) {
+    console.log('diff');
 } else {
-    console.log(2);
+    console.log('same');
 }
