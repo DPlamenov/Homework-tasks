@@ -16,9 +16,8 @@ function f(arr) {
         password2 = arr[counter + 1];
         counter++;
     }
-    if(!isBlocked){
+    if (!isBlocked) {
         console.log(`User ${username} logged in.`);
     }
-
 }
 

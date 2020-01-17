@@ -1,22 +1,6 @@
-let pattern = /\s+/gi;
-let string = 'This is   example   of some   string   ';
+let regexp = /[\d]+\.[\d]{2}/gi;
+let string = "Buy it only for 50.00 BGN";
+console.log(regexp.exec(string));
 
-let output = string.split(pattern);
-console.log(string);
-console.log(output);
+let array = [];
 
-let a = null;
-let array = [20, 30, 50, a, null];
-
-array.forEach(function (element) {
-    console.log(element);
-})
-
-let testA = true;
-let testB = 1;
-
-if (testA != testB) {
-    console.log('diff');
-} else {
-    console.log('same');
-}
