@@ -22,4 +22,3 @@ function f(startingYield) {
     console.log(days);
     console.log(totalExtracted);
 }
-f(40);
