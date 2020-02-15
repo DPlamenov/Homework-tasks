@@ -4,7 +4,7 @@ function f(password) {
         if (password.length < 6 || password.length > 10) {
             output.push("Password must be between 6 and 10 characters");
         }
-        let a = password.match("^[A-Za-z0-9]+$");
+        let a = password.match("\b[A-Za-z0-9]+\b");
         if (a === null) {
             output.push("Password must consist only of letters and digits");
         }
@@ -16,7 +16,7 @@ function f(password) {
 
         let number = 0;
         password.split('').forEach(function (value, index, array) {
-            if (parse(value) == value) {
+            if (parse(value) === value) {
                 number++;
             }
         });
@@ -37,4 +37,5 @@ function f(password) {
 
     print(validate(password));
 }
+
 f('logIn');

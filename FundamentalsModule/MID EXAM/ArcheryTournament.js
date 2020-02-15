@@ -6,17 +6,12 @@ function solve(input) {
         if (element.includes('Shoot Left')) {
             let startIndex = Number(element.split('@')[1]);
             let endIndex = Number(element.split('@')[2]);
-            let target;
-            if (startIndex >= endIndex) {
-                target = startIndex - endIndex;
-            } else {
-                target = Math.abs(endIndex - startIndex) + 1;
-            }
+            let target = startIndex - endIndex;
             if (startIndex >= 0 && startIndex < targets.length) {
-                while (target > targets.length) {
-                    target -= targets.length;
+                while (target < 0) {
+                    target += targets.length;
                 }
-                if (targets[target] < 5) {
+                if (targets[target] <= 5) {
                     points += targets[target];
                     targets[target] = 0;
                 } else {
@@ -32,7 +27,7 @@ function solve(input) {
                 while (target > targets.length - 1) {
                     target -= targets.length;
                 }
-                if (targets[target] < 5) {
+                if (targets[target] <= 5) {
                     points += targets[target];
                     targets[target] = 0;
                 } else {
@@ -57,4 +52,5 @@ solve([
         'Game over',
         ''
     ]
+
 );
