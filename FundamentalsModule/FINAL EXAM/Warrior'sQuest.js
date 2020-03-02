@@ -24,7 +24,7 @@ function solve(input) {
             let secondSubstring = element.split(' ')[3];
             if (string.includes(substring)) {
                 string = string.replace(substring, secondSubstring);
-            }
+            }   
             output.push(string);
         } else if (element.includes('Target Remove')) {
             let substring = element.split(' ')[2];

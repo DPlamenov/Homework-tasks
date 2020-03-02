@@ -1,28 +1,38 @@
 function solve(input) {
-    let register = {};
+    let system = {};
     for (let element of input) {
-        let [system, componentName, subComponentName] = element.split(' | ');
-        if (!register.hasOwnProperty(system)) {
-            register[system] = {};
+        let [systemName, component, subComponent] = element.split(' | ');
+        if (!system.hasOwnProperty(systemName)) {
+            system[systemName] = {};
         }
-        if (!register[system].hasOwnProperty(componentName)) {
-            register[system][componentName] = [];
+        if (!system[systemName].hasOwnProperty(component)) {
+            system[systemName][component] = [];
         }
-        register[system][componentName].push(subComponentName);
+        if (!system[systemName][component].includes(subComponent)) {
+            system[systemName][component].push(subComponent);
+        }
     }
-    let sortedKeys = Object.keys(register).sort(function (a, b) {
-        return Object.keys(register[b]).length - Object.keys(register[a]).length || a.localeCompare(b);
+    let keys = Object.keys(system);
+
+    keys.sort(function (a, b) {
+        if (Object.keys(system[b]).length - Object.keys(system[a]).length === 0) {
+            return a.localeCompare(b);
+        }
+        return Object.keys(system[b]).length - Object.keys(system[a]).length;
     });
-    sortedKeys.forEach((key) => {
+
+    for (let key of keys) {
         console.log(key);
-        let sortedSubKeys = Object.keys(register[key]).sort(function (a, b) {
-            return Object.keys(register[key][b]).length - Object.keys(register[key][a]).length;
+        let keys = Object.keys(system[key]);
+        keys.sort((a, b) => {
+            return system[key][b].length - system[key][a].length;
         });
-        sortedSubKeys.forEach((subKey) => {
-            console.log(`|||${subKey}`);
-            register[key][subKey].forEach((subComponent) => {
-                console.log(`||||||${subComponent}`);
+        keys.forEach(function (element) {
+            console.log('|||' + element);
+            system[key][element].forEach(element => {
+                console.log('||||||' + element);
             });
-        });
-    });
+        })
+
+    }
 }
