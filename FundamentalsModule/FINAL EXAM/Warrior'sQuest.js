@@ -1,16 +1,19 @@
 function solve(input) {
-    let string = input.shift();
+    let string = input.shift().trim();
     let output = [];
-    let counter = 0;
-    while (counter < input.length) {
-        let element = input[counter];
-        if (element.includes('GladiatorStance')) {
+
+    input = input.map(e => e.trim());
+    let command = input.shift();
+    while(command !== 'For Azeroth'){
+        let element = command;
+        let tokens = element.split(' ');
+        if (tokens[0] === 'GladiatorStance') {
             string = string.toUpperCase();
             output.push(string);
-        } else if (element.includes('DefensiveStance')) {
+        } else if (tokens[0] === 'DefensiveStance') {
             string = string.toLowerCase();
             output.push(string);
-        } else if (element.includes('Dispel')) {
+        } else if (tokens[0] === 'Dispel') {
             let index = Number(element.split(' ')[1]);
             let letter = element.split(' ')[2];
             if (index >= 0 && index < string.length) {
@@ -19,37 +22,39 @@ function solve(input) {
             } else {
                 output.push("Dispel too weak.");
             }
-        } else if (element.includes('Target Change')) {
+        } else if (`${tokens[0]} ${tokens[1]}` === 'Target Change') {
             let substring = element.split(' ')[2];
             let secondSubstring = element.split(' ')[3];
             if (string.includes(substring)) {
                 string = string.replace(substring, secondSubstring);
-            }   
+            }
             output.push(string);
-        } else if (element.includes('Target Remove')) {
+        } else if (`${tokens[0]} ${tokens[1]}` === 'Target Remove') {
             let substring = element.split(' ')[2];
-            string = string.replace(substring, '');
-            output.push(string);
-
+            if(string.includes(substring)){
+                string = string.replace(substring, '');
+                output.push(string);
+            }
         } else if (element === 'For Azeroth') {
-            output.forEach((element) => {
-                console.log(element);
-            });
             break;
         } else {
             output.push("Command doesn't exist!");
         }
-        counter++;
+        command = input.shift();
     }
 
     function modifyString(string, index, newChar) {
         let result = '';
         let array = string.split('');
 
-        array.splice(index, newChar.length, newChar);
+        array[index] = newChar;
+
         result = array.join('');
         return result;
     }
+    output.forEach((element) => {
+        console.log(element);
+    });
 }
 
 
@@ -61,5 +66,6 @@ solve([
         'Target Change d D',
         'target change D d',
         'For Azeroth',
+
     ]
 );
