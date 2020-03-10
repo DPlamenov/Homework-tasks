@@ -1,6 +1,2 @@
-let string = 'Hi how are you dr flt t';
-
-console.log(string);
-
-string = string.replace('are', 'rr');
+let string = `${23 + 5}`;
 console.log(string);

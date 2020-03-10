@@ -12,7 +12,7 @@ function solve(input) {
     let output = Array.from(map);
     let result = [];
     output.forEach(function (value) {
-        if (value[1] % 2 !== 0 && value[1] !== -1) {
+        if (value[1] % 2 !== 0) {
             result.push(value[0]);
         }
     });

@@ -30,7 +30,7 @@ function solve(input) {
                 }
             }
         } else if (element.includes(' -> ')) {
-            let [gladiator, skill, power] = element.split(' -> ')
+            let [gladiator, skill, power] = element.split(' -> ');
             power = Number(power);
             if (!gladiators.hasOwnProperty(gladiator)) {
                 gladiators[gladiator] = {};
@@ -52,7 +52,9 @@ function solve(input) {
         let toSort = element[1];
         let sort = [];
         for (let v in toSort) {
-            sort.push([v, toSort[v]]);
+            if(toSort.hasOwnProperty(v)){
+                sort.push([v, toSort[v]]);
+            }
         }
         sort = sort.sort(function (a, b) {
             return b[1] - a[1] || a[0].localeCompare(b[0]);

@@ -7,7 +7,7 @@ function solve(input) {
         let [neighborhood, inhabitant] = element.split(' - ');
         if (map.has(neighborhood)) {
             let currentArray = map.get(neighborhood);
-            let newArray = currentArray.concat([inhabitant]);
+            let newArray = currentArray.concat(inhabitant);
             map.set(neighborhood, newArray);
         }
     });

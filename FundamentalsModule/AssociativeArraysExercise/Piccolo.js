@@ -12,8 +12,7 @@ function solve(input) {
     let result = Array.from(map).filter((el) => el[1] === 1);
     result = result.sort(function (a, b) {
         return a[0].localeCompare(b[0]);
-    });
-    result.forEach(function (element) {
+    }).forEach(function (element) {
         console.log(element[0]);
     });
 }

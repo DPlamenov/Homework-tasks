@@ -8,6 +8,7 @@ function solve(input) {
             tracker.set(element, oldValue + 1);
         }
     });
+
     let output = Array.from(tracker).sort(function (a, b) {
         return b[1] - a[1];
     });
