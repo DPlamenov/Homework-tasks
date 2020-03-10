@@ -1,2 +1,4 @@
-let string = `${23 + 5}`;
-console.log(string);
+function couter() {
+    var x=1;
+    return function () {return x++};
+}
