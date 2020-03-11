@@ -9,7 +9,9 @@ function solve(input) {
         journal[element].push(index);
     });
 
-    Object.entries(journal).forEach(element => {
+    Object.entries(journal).sort((a, b) => {
+        return a[1].length - b[1].length;
+    }).forEach(element => {
         let line = `${element[0]}:${element[1].join('/')}`;
         console.log(line);
     });
