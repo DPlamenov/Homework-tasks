@@ -9,4 +9,4 @@ function solve(filePath) {
     console.log(`File extension: ${fileExt}`);
 }
 
-solve('C:\\Internal\\training\\internal\\55Tem.rplate.pptx');
+solve('C:\\Internal\\training\\internal\\Tem.rplate.pptx');
