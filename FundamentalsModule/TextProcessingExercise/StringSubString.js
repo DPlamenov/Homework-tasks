@@ -1,6 +1,7 @@
 function solve(word, text) {
     word = word.toLowerCase();
     text = text.split(' ').map(x => x.toLowerCase());
+
     if (text.includes(word)) {
         console.log(word);
     } else {

@@ -11,6 +11,7 @@ function revealWords(words = '', text = '') {
             }
         }
     }
+
     console.log(text.join(' '));
 }
 

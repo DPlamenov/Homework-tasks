@@ -21,4 +21,4 @@ function solve(str) {
     })
 }
 
-solve('Nowadays everyone uses #');
+solve('Nowadays everyone uses #e');
