@@ -1,12 +1,9 @@
 function solve(input) {
     let message = input[0];
-    let words = input[1];
+    let words = input[1].sort((a, b) => b.length - a.length);
 
     for (let word of words) {
-        if (message.includes('_'.repeat(word.length))) {
-            let regExp = new RegExp('\\b(_){' + word.length + '}\\b', 'g');
-            message = message.replace(regExp, word);
-        }
+        message = message.replace('_'.repeat(word.length), word);
     }
     console.log(message);
 }
