@@ -19,7 +19,7 @@ function solve(input) {
                     delete messages[sender];
                     console.log(`${sender} reached the capacity!`);
                 }
-                if (messages[receiver][0] + messages[receiver][1] >= capacity) {
+                if(messages[receiver][0] + messages[receiver][1] >= capacity) {
                     delete messages[receiver];
                     console.log(`${receiver} reached the capacity!`);
                 }
@@ -47,16 +47,16 @@ function solve(input) {
 }
 
 solve([
-        '20',
-        'Add=Mark=3=9',
-        'Add=Berry=5=5',
-        'Add=Clark=4=0',
-        'Empty=Berry',
-        'Add=Blake=9=3',
-        'Add=Michael=3=9',
-        'Add=Amy=9=9',
-        'Message=Blake=Amy',
-        'Message=Michael=Amy',
-        'Statistics'
-    ]
+    '20',
+    'Add=Mark=3=9',
+    'Add=Berry=5=5',
+    'Add=Clark=4=0',
+    'Empty=Berry',
+    'Add=Blake=9=3',
+    'Add=Michael=3=9',
+    'Add=Amy=9=9',
+    'Message=Blake=Amy',
+    'Message=Michael=Amy',
+    'Statistics'
+]
 );
