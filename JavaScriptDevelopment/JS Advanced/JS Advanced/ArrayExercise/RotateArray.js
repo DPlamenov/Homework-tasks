@@ -1,18 +1,7 @@
 function solve(input) {
     let countOfRotation = Number(input.pop());
-
-    for (let i = 0; i < countOfRotation; i++) {
-        let currentLast = input.pop();
-        input.unshift(currentLast);
+    for (let i = 0; i < countOfRotation % 100; i++) {
+        input.unshift(input.pop());
     }
-
     console.log(input.join(' '));
 }
-
-solve(['Banana',
-    'Orange',
-    'Coconut',
-    'Apple',
-    '15']
-
-);
