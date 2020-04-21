@@ -1,18 +1,15 @@
 function solve(input) {
     let array = [];
-    let counter = 1;
-    input.forEach(function (element) {
-        if (element === 'add') {
-            array.push(counter);
+    for (let i = 0; i < input.length; i++) {
+        let command = input[i];
+        if (command === 'add') {
+            array.push(i + 1);
         } else {
             array.pop();
         }
-        counter++;
-    });
+    }
     if (array.length > 0) {
-        for(let element of array){
-            console.log(element);
-        }
+        console.log(array.join('\n'));
     } else {
         console.log('Empty');
     }

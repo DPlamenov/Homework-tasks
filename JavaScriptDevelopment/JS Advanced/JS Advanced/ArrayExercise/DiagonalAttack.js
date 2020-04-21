@@ -40,13 +40,9 @@ function solve(input) {
 
     function isPartOfDiagonal(row, column, matrix) {
         if (row === column) {
-            return true; //d1
-        }
-        if (column === matrix.length - 1 - row) {
             return true;
         }
-
-        return false;
+        return column === matrix.length - 1 - row;
     }
 }
 
