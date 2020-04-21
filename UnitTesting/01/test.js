@@ -1,34 +1,16 @@
 let assert = require('chai').assert;
-let Convert = require('./Convert');
+let Library = require('./Library');
 describe('General describe block', function () {
-    describe('Test constructor', function () {
-        it('should return valid object', function () {
-            let convert = new Convert([
-                ["python", "blue"]
-                , ["python", "blue"]
-                , ["c++", "red"]
-                , ["java", "yellow"]
-                , ["c++", "red"]
-            ]);
-
-            let expected = {
-                python: {
-                    count: 2,
-                    color: "blue"
-                },
-                'c++': {
-                    count: 2,
-                    color: "red"
-                },
-                java: {
-                    count: 1,
-                    color: "yellow"
-                }
-            };
-
-            let actual = convert.getObject();
-            console.log(actual);
-            assert.deepEqual(actual, expected);
+    let instance = new Library('MyLib');
+    describe('Test constructor()', function () {
+        it('should return a object with 3 properties', function () {
+            assert.equal(instance.libraryName, 'MyLib');
+            assert.deepEqual(instance.subscribers, []);
+            assert.deepEqual(instance.subscriptionTypes, {
+                'normal': instance.libraryName.length,
+                'special': instance.libraryName.length * 2,
+                'vip': Number.MAX_SAFE_INTEGER
+            });
         });
     });
 });

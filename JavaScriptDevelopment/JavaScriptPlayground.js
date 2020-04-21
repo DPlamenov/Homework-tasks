@@ -1,4 +1,6 @@
-let arr = [10, 50, 50, 10];
+function solve(input) {
+    console.log(input[1].split('->')[3[2]]);
+}
 
 
-console.log(arr.slice(-2));
+solve(['5','1->5->Hi<-Hi']);
