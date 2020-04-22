@@ -1,8 +1,6 @@
 function solve(input) {
-    let biggest = Number.MIN_SAFE_INTEGER;
     let result = input.reduce((a, b) => {
-        if(b >= biggest){
-            biggest = b;
+        if(b >= Math.max(...a)){
             a.push(b);
         }
         return a;

@@ -5,3 +5,7 @@ function solve(input) {
     }
     console.log(input.join(' '));
 }
+
+
+
+solve([4, 2, 5, 5, 1, 5, 1, 5, 1324]);
