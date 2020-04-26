@@ -45,4 +45,4 @@
         Suits: Suits,
         Card: Card
     };
-}())
+}());

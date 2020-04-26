@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FromJSONToHTMLTable</title>
+    <style>
+        table, th {
+            border: groove;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black;
+        }
+
+        td, th {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+</div>
+<script>
+    function fromJSONToHTMLTable(input) {
+        let output = '<table>\n';
+        input = JSON.parse(input);
+        let keys = Object.keys(input[0]);
+        output += '<tr>';
+        for (let i = 0; i < keys.length; i++) {
+            output += `<th>${keys[i]}</th>`;
+        }
+        output += '</tr>\n';
+        for (let row of input) {
+            output += `    <tr>`;
+            for (let i = 0; i < keys.length; i++) {
+                output += `<td>${escapeHtml(row[keys[i]])}</td>`;
+            }
+            output += `</tr>\n`;
+        }
+
+        output += '</table>';
+        return output;
+
+        function escapeHtml(unsafe) {
+            return unsafe.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#39;");
+        }
+    }
+
+    window.onload = function () {
+        let container = document.getElementById('wrapper');
+        container.innerHTML = fromJSONToHTMLTable(['[{"Name":"Tomatoes & Chips","Pr4ice":2.35},{"Name":"J&B Chocolate","Pr4ice":0.96}]']);
+    };
+</script>
+</body>
+</html>
