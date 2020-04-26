@@ -3,7 +3,7 @@ function solve(input) {
 
     for (let line of input) {
         let words = line.toLowerCase().match(/\w+/g).filter(e => e !== '');
-        for(let word of words){
+        for (let word of words) {
             set.add(word);
         }
     }
@@ -12,6 +12,3 @@ function solve(input) {
     console.log(result);
 
 }
-
-solve([
-    'lore']);
