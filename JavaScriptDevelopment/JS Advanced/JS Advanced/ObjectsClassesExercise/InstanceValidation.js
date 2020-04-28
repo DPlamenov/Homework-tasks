@@ -27,5 +27,3 @@ class CheckingAccount {
         }
     }
 }
-
-let acc = new CheckingAccount('423414', 'petkan@another.co.uk', 'Petkan', 'D');
