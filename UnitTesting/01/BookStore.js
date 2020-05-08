@@ -66,3 +66,5 @@ BookStore = class BookStore {
         return result.trim();
     }
 }
+
+module.exports = BookStore;

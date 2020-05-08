@@ -1,5 +1,4 @@
 describe('General describe block', function () {
-
     describe('Test constructor()', function () {
         it('constructor()', function () {
             let instance = new BookStore('name');
