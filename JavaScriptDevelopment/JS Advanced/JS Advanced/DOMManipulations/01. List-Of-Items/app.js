@@ -6,5 +6,4 @@ function addItem() {
     listItemElement.innerText = itemInputElement.value;
 
     listElement.appendChild(listItemElement);
-    itemInputElement.value = '';
 }
