@@ -14,6 +14,7 @@ function solve(input) {
         console.log(result);
         number = result;
     });
+
 }
 
 solve(['32', 'chop', 'chop', 'chop', 'chop', 'chop']);

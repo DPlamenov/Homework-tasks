@@ -1,13 +1,14 @@
 function solve(array) {
-    let object = {};
-    for (let i = 0; i < array.length; i += 2) {
-        let key = array[i];
-        let value = array[i + 1];
+    const calories = array.reduce((acc, current, i, array) => {
+        if (i % 2 === 0) {
+            acc[current] = null;
+        } else {
+            acc[array[i - 1]] = Number(current);
+        }
+        return acc;
+    }, {});
 
-        object[key] = Number(value);
-    }
-
-    console.log(object);
+    console.log(calories);
 }
 
 solve(['Yoghurt', '48', 'Rise', '138', 'Apple', '52']);

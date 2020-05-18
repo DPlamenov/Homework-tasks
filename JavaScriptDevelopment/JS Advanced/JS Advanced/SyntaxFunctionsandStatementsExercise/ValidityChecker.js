@@ -4,6 +4,7 @@ function solve(input) {
     let distance1 = distance(x1, y1, 0, 0);
     let distance2 = distance(x2, y2, 0, 0);
     let distance3 = distance(x1, y1, x2, y2);
+
     if (Number.isInteger(distance1)) {
         console.log(`{${x1}, ${y1}} to {0, 0} is valid`);
     } else {
