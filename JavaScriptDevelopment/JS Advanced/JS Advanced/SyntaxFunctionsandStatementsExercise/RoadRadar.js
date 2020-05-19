@@ -1,4 +1,4 @@
-function solve(input) {
+function radar(input) {
     let speed = input[0];
     let area = input[1];
 
@@ -16,4 +16,4 @@ function solve(input) {
     printMessage(speed, limits[area]);
 }
 
-solve([120, 'interstate']);
+radar([120, 'interstate']);

@@ -12,6 +12,3 @@ function solve(numbers) {
     console.log(result);
     console.log(sum);
 }
-
-
-solve(2222222);

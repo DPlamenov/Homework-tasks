@@ -10,3 +10,4 @@ function gcd_two_numbers(x, y) {
 }
 
 console.log(gcd_two_numbers(12, 15));
+

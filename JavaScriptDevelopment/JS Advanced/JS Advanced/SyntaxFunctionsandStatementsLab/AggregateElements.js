@@ -7,4 +7,3 @@ function solve(input) {
     console.log(concat);
 }
 
-solve([1, 2, 3]);
