@@ -1,5 +1,7 @@
 function solve(input) {
-    let words = input.match(/\w+/g).map(e => e.toUpperCase()).join(', ');
+    let words = input.match(/\w+/g)
+        .map(e => e.toUpperCase())
+        .join(', ');
     console.log(words);
 }
 
