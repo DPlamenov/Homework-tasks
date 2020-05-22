@@ -1,28 +1,27 @@
-class Stringer{
-    constructor(string, length){
+class Stringer {
+    constructor(string, length) {
         this.innerString = string;
         this.innerLength = length;
     }
 
-    increase(length){
+    increase(length) {
         this.innerLength += length;
 
     }
 
-    decrease(length){
+    decrease(length) {
         this.innerLength -= length;
-        if(this.innerLength < 0){
+        if (this.innerLength < 0) {
             this.innerLength = 0;
         }
     }
 
-    toString(){
-        if(this.innerLength === 0){
-            return "...";
+    toString() {
+        if (this.innerLength === 0) {
+            return '...';
         }
-
-        if(this.innerString.length > this.innerLength){
-            this.innerString = this.innerString.substring(0, this.innerLength) + "...";
+        if (this.innerString.length > this.innerLength) {
+            return this.innerString.substring(0, this.innerLength) + '...';
         }
         return this.innerString;
     }
