@@ -1,18 +1,20 @@
 function solve(input) {
     let array = [];
-    for (let i = 0; i < input.length; i++) {
-        let command = input[i];
-        if (command === 'add') {
-            array.push(i + 1);
+    let counter = 1;
+
+    input.forEach(e => {
+        if (e === 'add') {
+            array.push(counter);
         } else {
             array.pop();
         }
-    }
+        counter++;
+    });
+
     if (array.length > 0) {
-        console.log(array.join('\n'));
-    } else {
-        console.log('Empty');
+        return array.join('\n');
     }
+    return console.log('Empty');
 }
 
 solve(['add',

@@ -35,8 +35,3 @@ function solve(matrix) {
         });
     }
 }
-
-solve([[],
-    [1],
-    [0, 1, 0]]
-);

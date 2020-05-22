@@ -3,10 +3,8 @@ function solve(n, k) {
     let output = [1];
     while (output.length < n) {
         let toAdd = 0;
-        let toAddExtract = output.slice(Math.max(0, output.length - k ), output.length + 1);
-        toAdd = toAddExtract.reduce(function (previousValue, currentValue) {
-            return previousValue + currentValue;
-        });
+        let toAddExtract = output.slice(Math.max(0, output.length - k));
+        toAdd = toAddExtract.reduce((acc, current) => acc + current, 0);
         output.push(toAdd);
         counter++;
     }

@@ -1,44 +1,15 @@
-function solve(input) {
-    let counter = 0;
-    input.forEach(function (element, row) {
-        // element = element.map(Number);
-        element.forEach(function (el, column) {
-            let neighbors = getNeighbors(row, column, input);
-            if (neighbors.includes(el)) {
-                counter += neighbors.filter(e => e === el).length;
+function equalNeighbors(matrix = []) {
+    // Mask
+    let neighbors = matrix.reduce((acc, current, rowIndex) => {
+        return current.reduce((acc, item, itemIndex) => {
+            if (item === current[itemIndex + 1]) {
+                acc++;
             }
-        })
-    });
-    console.log(counter / 2);
-
-    function getNeighbors(row, column, matrix) {
-        // console.log(row, column);
-        let result = [];
-
-        //upper
-        if (row > 0) {
-            let _upper = matrix[row - 1][column];
-            result.push(_upper);
-        }
-        //lower
-        if (row < matrix.length - 1) {
-            let _lower = matrix[row + 1][column];
-            result.push(_lower);
-        }
-        //right
-        if (column < matrix[0].length - 1) {
-            let _right = matrix[row][column + 1];
-            result.push(_right);
-        }
-        //left
-        if (column > 0) {
-            let _right = matrix[row][column - 1];
-            result.push(_right);
-        }
-        return result;
-    }
+            if (item === (matrix[rowIndex + 1] || [])[itemIndex]) {
+                acc++;
+            }
+            return acc;
+        }, acc);
+    }, 0);
+    console.log(neighbors);
 }
-
-solve([[2, 2, 5, 7, 4],
-    [4, 0, 5, 3, 4],
-    [2, 5, 5, 4, 2]]);

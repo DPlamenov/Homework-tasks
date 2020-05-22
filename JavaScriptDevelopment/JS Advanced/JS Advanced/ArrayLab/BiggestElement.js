@@ -1,20 +1,5 @@
 function solve(input) {
-    let biggest = Number.MIN_SAFE_INTEGER;
-
-    input.forEach(function (element) {
-        for (let el of element) {
-            let currentBiggest = Number.MIN_SAFE_INTEGER;
-            if (el > currentBiggest) {
-                currentBiggest = el;
-            }
-            // console.log(currentBiggest);
-            if (currentBiggest > biggest) {
-                biggest = currentBiggest;
-            }
-        }
-
-    });
-
+    let biggest = Math.max(...input.flat());
     console.log(biggest);
 }
 
