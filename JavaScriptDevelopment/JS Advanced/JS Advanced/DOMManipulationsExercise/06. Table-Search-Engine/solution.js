@@ -17,7 +17,7 @@ function solve() {
                 .map(e => e.innerText);
 
             for (let textContent of td) {
-                if(textContent.includes(searchInput)){
+                if(textContent.toLowerCase().trim().includes(searchInput.toLowerCase().trim())){
                     element.classList.add('select');
                 }
             }

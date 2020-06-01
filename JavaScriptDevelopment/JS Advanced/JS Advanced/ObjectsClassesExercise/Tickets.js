@@ -17,8 +17,8 @@ function solve(input, sort) {
     }
 
     tickets.sort((a, b) => {
-        if(sort === 'price'){
-            return  a[sort] - b[sort];
+        if (sort === 'price') {
+            return a[sort] - b[sort];
         }
         return a[sort].localeCompare(b[sort]);
     });

@@ -3,9 +3,8 @@ function solve(input) {
     input.forEach(function (element) {
         let currentObj = JSON.parse(element);
         output += '\t<tr>\n';
-
-        Object.entries(currentObj).forEach(function (element) {
-            output += `\t\t<td>${escapeHtml(element[1])}</td>\n`;
+        Object.values(currentObj).forEach(function (element) {
+            output += `\t\t<td>${escapeHtml(element)}</td>\n`;
         });
         output += '\t</tr>\n';
     });

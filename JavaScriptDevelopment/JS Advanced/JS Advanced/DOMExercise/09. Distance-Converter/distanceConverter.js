@@ -44,7 +44,7 @@ function attachEventsListeners() {
         } else if (convertTo === 'in') {
             result = outputToMeters * 39.3700787;
         }
-        alert(result.toFixed(3));
+        // alert(result.toFixed(3));
         outputElement.value = result;
     }
 }
