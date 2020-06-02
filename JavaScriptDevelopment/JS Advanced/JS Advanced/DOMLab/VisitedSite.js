@@ -3,10 +3,9 @@ function solve() {
     allLinks.forEach((el) => {
         el.addEventListener('click', visitSite);
     });
-
+    
     function visitSite(e) {
         let target = e.target;
-
         let parent = target.parentNode;
 
         let visited = parent.querySelector('p');

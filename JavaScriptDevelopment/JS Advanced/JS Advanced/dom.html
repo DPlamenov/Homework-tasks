@@ -3,14 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>
-
+        Task
     </title>
+    <script>
+        function f() {
+            let addTaskButton = document.querySelector('#addTask');
+            addTaskButton.addEventListener('click', addTask);
 
+            function addTask(e) {
+                e.preventDefault();
+                let taskInput = document.querySelector('#task');
+                let list = document.querySelector('#list');
+
+                let listItem = document.createElement('li');
+                listItem.innerText = taskInput.value;
+
+                list.appendChild(listItem);
+                taskInput.value = '';
+                sortTask(list);
+            }
+
+            function sortTask(list) {
+                let cloneList = list.cloneNode(false);
+                Array.from(list.querySelectorAll('li'))
+                    .sort((a, b) => {
+                        return a.innerText.localeCompare(b.innerText);
+                    }).forEach(item => cloneList.appendChild(item));
+
+                list.parentNode.replaceChild(cloneList, list);
+            }
+        }
+
+        window.addEventListener('load', () => {
+            f();
+        });
+        // window.onload = f;
+    </script>
 </head>
 <body>
 <div id="content">
-  <h1>Welcome!</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, velit?</p>
+    <div>
+        <input type="text" id="task"/>
+        <button id="addTask">Add</button>
+    </div>
+    <div>
+        <ol id="list">
+
+        </ol>
+    </div>
 </div>
 </body>
 </html>
