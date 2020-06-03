@@ -11,16 +11,26 @@ function solve() {
 
     let operations = ['/', 'x', '+', '-'];
 
+    let operation = {
+        '/': (a, b) => a / b,
+        '*': (a, b) => a * b,
+        '+': (a, b) => a + b,
+        '-': (a, b) => a - b,
+    };
+
     function pressKey(e) {
         e.preventDefault();
         let target = e.target;
 
         if (target.innerText === '=') {
-            let isValid = expressionOutput.textContent.split(' ').filter(e => e !== '');
-            if (isValid.length !== 3 || !operations.includes(isValid[1])) {
+            let command = expressionOutput.textContent.split(' ').filter(e => e !== '');
+            if (command.length !== 3 || !operations.includes(command[1])) {
                 resultOutput.innerHTML = `NaN`;
             } else {
-                resultOutput.innerHTML = eval(`${expressionOutput.textContent.replace('x', '*')}`);
+                let _operation = command[1].replace('x', '*');
+                let result = operation[_operation](Number(command[0]),  Number(command[2]));
+                console.log(result);
+                resultOutput.innerHTML = result;
             }
         } else {
             if (operations.includes(target.innerText)) {
