@@ -37,7 +37,6 @@ function lockedProfile() {
     }
 
     function checkIsLocked(profile) {
-        let radioButton = profile.querySelector('input[type="radio"]');
-        return radioButton.checked;
+        return profile.querySelector('input[type="radio"]').checked;
     }
 }
