@@ -24,14 +24,13 @@
             }
 
             function sortTask(list) {
-                eval('4');
-                let cloneList = list.cloneNode(false);
-                Array.from(list.querySelectorAll('li'))
+                let listItems = list.querySelectorAll('li');
+                list.innerHTML = '';
+                Array.from(listItems)
                     .sort((a, b) => {
                         return a.innerText.localeCompare(b.innerText);
-                    }).forEach(item => cloneList.appendChild(item));
-
-                list.parentNode.replaceChild(cloneList, list);
+                    })
+                    .forEach(item => list.appendChild(item));
             }
         }
 
