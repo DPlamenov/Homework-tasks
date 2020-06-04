@@ -1,25 +1,96 @@
-let result = require('../../../JavaScriptPlayground');
+let result = require('./class_Dinner');
 let {assert} = require('chai');
-
 describe('General describe block', function () {
-    it('test', () => {
+    let instance;
+    beforeEach(() => {
+         instance = new result(100);
+    });
+    it('test constructor', () => {
+        assert.deepEqual(instance.dishes, []);
+        assert.deepEqual(instance.products, []);
+        assert.deepEqual(instance.guests, {});
+        assert.equal(instance.budget, 100);
+    });
+    describe('test shopping', () => {
+       it('1', () => {
+            let r = instance.shopping(['a', 4]);
 
-        function area() {
-            return this.x * this.y;
-        };
 
-        function vol() {
-            return this.x * this.y * this.z;
-        };
-        let actual = result(area, vol,'[{"x":"10","y":"-22","z":"10"},{"x":"47","y":"7","z":"-5"},{"x":"55","y":"8","z":"0"},{"x":"100","y":"100","z":"100"},{"x":"55","y":"80","z":"250"}]');
-        let expected = [
-            { area: 220, volume: 2200 },
-            { area: 329, volume: 1645 },
-            { area: 440, volume: 0 },
-            { area: 10000, volume: 1000000 },
-            { area: 4400, volume: 1100000 }
-        ];
-        assert.deepEqual(actual, expected, "The returned value is not correct")
+            assert.equal(r, `You have successfully bought a!`);
+            assert.equal(instance.budget, 96);
+            assert.deepEqual(instance.products, ['a']);
+       });
 
-    })
+        it('2', () => {
+            let r = () => instance.shopping(['a', 400]);
+
+
+            assert.throw(r, `Not enough money to buy this product`);
+            assert.equal(instance.budget, 100);
+        });
+    });
+
+    describe('test recipes', () => {
+        it('1', () => {
+             instance.shopping(['a', 19]);
+             instance.shopping(['b', 15]);
+
+             let r = instance.recipes({recipeName: 'ab', productsList: ['a', 'b']});
+             assert.equal(r, `ab has been successfully cooked!`);
+
+             assert.deepEqual(instance.dishes, [
+                 {
+                     recipeName: 'ab',
+                     productsList: ['a', 'b']
+                 }
+             ])
+        });
+        it('2', () => {
+            let r = () => instance.recipes({recipeName: 'ab', productsList: ['a', 'b']});
+            assert.throw(r, 'We do not have this product');
+            assert.deepEqual(instance.dishes, []);
+        });
+    });
+    describe('test inviteGuests', () => {
+        it('1', () => {
+            let r = () => instance.inviteGuests('petko', 'a');
+
+            assert.throw(r, 'We do not have this dish');
+        });
+        it('2', () => {
+            instance.shopping(['a', 19]);
+            instance.shopping(['b', 15]);
+            instance.recipes({recipeName: 'ab', productsList: ['a', 'b']});
+            instance.inviteGuests('petko', 'ab');
+            let r = () => instance.inviteGuests('petko', 'ab');
+
+            assert.throw(r, 'This guest has already been invited');
+        });
+        it('3', () => {
+            instance.shopping(['a', 19]);
+            instance.shopping(['b', 15]);
+            instance.recipes({recipeName: 'ab', productsList: ['a', 'b']});
+            let r = instance.inviteGuests('petko', 'ab');
+
+            assert.equal(r, `You have successfully invited petko!`);
+            assert.deepEqual(instance.guests, {
+                'petko': 'ab'
+            });
+        });
+
+    });
+
+    describe('test showAttendance()', () => {
+        it('1', () => {
+            instance.shopping(['a', 19]);
+            instance.shopping(['b', 15]);
+            instance.recipes({recipeName: 'ab', productsList: ['a', 'b']});
+            instance.inviteGuests('petko', 'ab');
+            instance.inviteGuests('petko1', 'ab');
+
+            let r = instance.showAttendance();
+
+            assert.equal(r, 'petko will eat ab, which consists of a, b\npetko1 will eat ab, which consists of a, b');
+        })
+    });
 });
