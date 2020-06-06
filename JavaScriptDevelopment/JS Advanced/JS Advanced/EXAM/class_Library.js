@@ -62,8 +62,8 @@ class Library {
             title: bookTitle,
             author: bookAuthor
         };
-        subscriber.books.push(book);
 
+        subscriber.books.push(book);
         return subscriber;
     }
 
@@ -86,3 +86,5 @@ class Library {
         return output.join('\n');
     }
 }
+
+module.exports = Library;
