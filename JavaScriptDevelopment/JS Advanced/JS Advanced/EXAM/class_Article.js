@@ -1,8 +1,7 @@
 class Article {
     #comments = [];
+
     #likes = [];
-
-
     constructor(title, creator) {
         this.title = title;
         this.creator = creator;
@@ -34,7 +33,7 @@ class Article {
     }
 
     dislike(username) {
-        let indexOf = this.#likes.indexOf(username);
+        const indexOf = this.#likes.indexOf(username);
         if (indexOf >= 0) {
             this.#likes.splice(indexOf, 1);
             return `${username} disliked ${this.title}`;

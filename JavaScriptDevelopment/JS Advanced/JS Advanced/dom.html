@@ -5,48 +5,27 @@
     <title>
         Task
     </title>
+    <script src="script.js"></script>
     <script>
-        function f() {
-            let addTaskButton = document.querySelector('#addTask');
-            addTaskButton.addEventListener('click', addTask);
-
-            function addTask(e) {
-                e.preventDefault();
-                let taskInput = document.querySelector('#task');
-                let list = document.querySelector('#list');
-
-                let listItem = document.createElement('li');
-                listItem.innerText = taskInput.value;
-
-                list.appendChild(listItem);
-                taskInput.value = '';
-                sortTask(list);
-            }
-
-            function sortTask(list) {
-                let listItems = list.querySelectorAll('li');
-                list.innerHTML = '';
-                Array.from(listItems)
-                    .sort((a, b) => {
-                        return a.innerText.localeCompare(b.innerText);
-                    })
-                    .forEach(item => list.appendChild(item));
-            }
-        }
-
         window.addEventListener('load', () => {
             f();
         });
+
     </script>
 </head>
 <body>
 <div id="content">
+    <!--    <div>-->
+    <!--        <input type="text" id="task"/>-->
+    <!--        <button id="addTask">Add</button>-->
+    <!--    </div>-->
     <div>
-        <input type="text" id="task"/>
-        <button id="addTask">Add</button>
-    </div>
-    <div>
-        <ol id="list"></ol>
+        <ul id="list">
+            <li>Sofia</li>
+            <li>Varna</li>
+            <li>Plovdiv</li>
+            <li>Bourgas</li>
+        </ul>
     </div>
 </div>
 </body>

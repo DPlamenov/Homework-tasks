@@ -12,9 +12,9 @@ module.exports = {
             jsx: true,
         },
     },
+    "parser": "babel-eslint",
     rules: {
         indent: ['error', 4],
-        // semi: [2, 'never'],
         'linebreak-style': 0,
     },
 };

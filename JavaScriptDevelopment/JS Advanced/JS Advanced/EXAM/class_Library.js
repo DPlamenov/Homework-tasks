@@ -5,63 +5,64 @@ class Library {
         this.subscriptionTypes = {
             normal: libraryName.length,
             special: libraryName.length * 2,
-            vip: Number.MAX_SAFE_INTEGER,
+            vip: Number.MAX_SAFE_INTEGER
         };
     }
 
     subscribe(name, type) {
-        const validTypes = Object.keys(this.subscriptionTypes);
-
-        if (!validTypes.includes(type)) {
+        if (!this.subscriptionTypes.hasOwnProperty(type)) {
             throw new Error(`The type ${type} is invalid`);
         }
 
-        const subscriber = this.subscribers
-            .find((e) => e.name === name);
+        let subscriber = this.subscribers.find(e => e.name === name);
 
         if (subscriber) {
             subscriber.type = type;
-            return subscriber;
-        }
-        this.subscribers.push({
-            name,
-            type,
-            books: [],
-        });
+        } else {
+            subscriber = {
+                name,
+                type,
+                books: []
+            };
 
-        return this.subscribers[this.subscribers.length - 1];
+            this.subscribers.push(subscriber);
+        }
+
+        return subscriber;
     }
 
     unsubscribe(name) {
-        const subscriber = this.subscribers
-            .find((e) => e.name === name);
-
-        if (!subscriber) {
+        let indexOf = this.subscribers
+            .findIndex(e => e.name === name);
+        if (indexOf >= 0) {
+            this.subscribers = this.subscribers.slice(0, indexOf)
+                .concat(this.subscribers.slice(indexOf + 1));
+        } else {
             throw new Error(`There is no such subscriber as ${name}`);
         }
-
-        const indexOf = this.subscribers
-            .findIndex((e) => e.name === name);
-
-        this.subscribers.splice(indexOf, 1);
 
         return this.subscribers;
     }
 
     receiveBook(subscriberName, bookTitle, bookAuthor) {
-        const subscriber = this.subscribers
-            .find((e) => e.name === subscriberName);
+        let subscriber = this.subscribers.find(e => e.name === subscriberName);
         if (!subscriber) {
             throw new Error(`There is no such subscriber as ${subscriberName}`);
         }
 
-        const typeOfSubscriber = this.subscriptionTypes[subscriber.type];
+        let type = subscriber.type;
+        let typeLimit = this.subscriptionTypes[type];
+        let booksOfSub = subscriber.books.length;
 
-        if (typeOfSubscriber > subscriber.books.length) {
-            subscriber.books.push({ title: bookTitle, author: bookAuthor });
-        } else {
-            throw new Error(`You have reached your subscription limit ${typeOfSubscriber}!`);
+        if (typeLimit === booksOfSub) {
+            throw new Error(`You have reached your subscription limit ${typeLimit}!`);
         }
+
+        let book = {
+            title: bookTitle,
+            author: bookAuthor
+        };
+        subscriber.books.push(book);
 
         return subscriber;
     }
@@ -70,27 +71,18 @@ class Library {
         if (this.subscribers.length === 0) {
             return `${this.libraryName} has no information about any subscribers`;
         }
-        let output = '';
-        this.subscribers.forEach((el) => {
-            const books = el.books.reduce((a, b) => {
-                a.push(`${b.title} by ${b.author}`);
-                return a;
-            }, []).join(', ');
-            output += `Subscriber: ${el.name}, Type: ${el.type}\nReceived books: ${books}\n`;
+
+        let output = [];
+
+        this.subscribers.forEach(function (sub) {
+            output.push(`Subscriber: ${sub.name}, Type: ${sub.type}`);
+            let bookOutput = [];
+            sub.books.forEach(function (book) {
+                bookOutput.push(`${book.title} by ${book.author}`);
+            });
+            output.push(`Received books: ${bookOutput.join(', ')}`);
         });
-        return `${output}\n`;
+
+        return output.join('\n');
     }
 }
-
-const lib = new Library('Lib');
-
-lib.subscribe('Peter', 'normal');
-lib.subscribe('John', 'special');
-// lib.subscribe('John', 'vip');
-
-
-lib.receiveBook('John', 'A Song of Ice and Fire', 'George R. R. Martin');
-lib.receiveBook('Peter', 'Lord of the rings', 'J. R. R. Tolkien');
-lib.receiveBook('John', 'Harry Potter', 'J. K. Rowling');
-
-console.log(lib.showInfo());
