@@ -16,5 +16,4 @@ let v = (function solution() {
             return vec1[0] * vec2[1] - vec1[1] * vec2[0];
         }
     };
-
 })();

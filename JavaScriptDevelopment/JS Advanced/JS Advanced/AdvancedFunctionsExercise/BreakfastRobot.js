@@ -63,7 +63,6 @@ function solve() {
                     }
                 });
 
-
             if (allProducts) {
                 Object.entries(needProducts)
                     .forEach(function (element) {

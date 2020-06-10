@@ -1,4 +1,4 @@
-function Spy(target, method) {
+function spy(target, method) {
     const f = target[method];
     let counter = {count: 0};
 

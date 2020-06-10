@@ -6,12 +6,13 @@ function solve() {
         let target = e.target;
         let parentNode = target.parentNode;
 
-        tableRows.filter(e => e !== parentNode).map(e => e.style.backgroundColor = '');
+        tableRows.filter(e => e !== parentNode)
+            .map(e => e.style.backgroundColor = '');
 
         if (parentNode.style.backgroundColor !== '') {
             parentNode.style.backgroundColor = '';
         } else {
-            parentNode.style.backgroundColor = '#413f5e';
+            parentNode.style.backgroundColor = '#403e5c';
         }
     });
 }

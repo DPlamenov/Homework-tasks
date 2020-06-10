@@ -23,7 +23,6 @@ class Company {
             a[b[3]].push(b);
             return a;
         }, {});
-
         Object.entries(departments).forEach(function (element) {
             let department = element[0];
             let currentAvg = element[1].map(e => e[1]).reduce((a, b) => {
