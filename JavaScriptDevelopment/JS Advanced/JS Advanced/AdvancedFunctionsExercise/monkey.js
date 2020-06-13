@@ -1,7 +1,7 @@
 function solution(argument) {
-    function getRating(that) {
-        let upVotes = that.upvotes;
-        let downVotes = that.downvotes;
+    function getRating() {
+        let upVotes = this.upvotes;
+        let downVotes = this.downvotes;
 
         let totalVotes = upVotes + downVotes;
         let balance = upVotes - downVotes;
@@ -31,6 +31,6 @@ function solution(argument) {
             n = Math.ceil(Math.max(this.upvotes, this.downvotes) * 0.25);
         }
 
-        return [this.upvotes + n, this.downvotes + n, this.upvotes - this.downvotes, getRating(this)];
+        return [this.upvotes + n, this.downvotes + n, this.upvotes - this.downvotes, getRating.call(this)];
     }
 }

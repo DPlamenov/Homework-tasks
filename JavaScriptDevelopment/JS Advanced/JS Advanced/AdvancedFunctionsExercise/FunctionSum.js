@@ -3,8 +3,7 @@ function add(x) {
         x += a;
         return sum;
     }
-    sum.toString =  () => x;
+
+    sum.toString = () => x;
     return sum;
 }
-
-console.log(add(1)(6)(-3).toString());
