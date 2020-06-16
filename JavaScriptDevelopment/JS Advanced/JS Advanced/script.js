@@ -10,7 +10,6 @@ function f() {
     }
 
 
-
     const ul = document.querySelector('#list');
     ul.addEventListener('click', clickUl);
     ul.addEventListener('click', function (e) {
