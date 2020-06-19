@@ -14,73 +14,57 @@ class Library {
             throw new Error(`The type ${type} is invalid`);
         }
 
-        let subscriber = this.subscribers.find(e => e.name === name);
-
-        if (subscriber) {
-            subscriber.type = type;
-        } else {
+        let subscriber = this.subscribers.find(e => name === e.name);
+        if (!subscriber) {
             subscriber = {
-                name,
-                type,
-                books: []
+                name, type, books: []
             };
-
             this.subscribers.push(subscriber);
+            return subscriber;
         }
+
+        subscriber.type = type;
 
         return subscriber;
     }
 
     unsubscribe(name) {
-        let indexOf = this.subscribers
-            .findIndex(e => e.name === name);
-        if (indexOf >= 0) {
-            this.subscribers = this.subscribers.slice(0, indexOf)
-                .concat(this.subscribers.slice(indexOf + 1));
-        } else {
+        let subscriber = this.subscribers.findIndex(e => name === e.name);
+        if (subscriber === -1) {
             throw new Error(`There is no such subscriber as ${name}`);
         }
+
+        this.subscribers.splice(subscriber, 1);
 
         return this.subscribers;
     }
 
     receiveBook(subscriberName, bookTitle, bookAuthor) {
-        let subscriber = this.subscribers.find(e => e.name === subscriberName);
+        let subscriber = this.subscribers.find(e => subscriberName === e.name);
         if (!subscriber) {
             throw new Error(`There is no such subscriber as ${subscriberName}`);
         }
-
         let type = subscriber.type;
-        let typeLimit = this.subscriptionTypes[type];
-        let booksOfSub = subscriber.books.length;
+        let typeValue = this.subscriptionTypes[type];
 
-        if (typeLimit === booksOfSub) {
-            throw new Error(`You have reached your subscription limit ${typeLimit}!`);
+        if (typeValue === subscriber.books.length) {
+            throw new Error(`You have reached your subscription limit ${typeValue}!`);
         }
 
-        let book = {
-            title: bookTitle,
-            author: bookAuthor
-        };
+        subscriber.books.push({ title: bookTitle, author: bookAuthor });
 
-        subscriber.books.push(book);
         return subscriber;
     }
 
     showInfo() {
-        if (this.subscribers.length === 0) {
-            return `${this.libraryName} has no information about any subscribers`;
-        }
-
         let output = [];
-
-        this.subscribers.forEach(function (sub) {
-            output.push(`Subscriber: ${sub.name}, Type: ${sub.type}`);
-            let bookOutput = [];
-            sub.books.forEach(function (book) {
-                bookOutput.push(`${book.title} by ${book.author}`);
+        this.subscribers.forEach(subscriber => {
+            output.push(`Subscriber: ${subscriber.name}, Type: ${subscriber.type}`);
+            let books = [];
+            subscriber.books.forEach(book => {
+                books.push(`${book.title} by ${book.author}`);
             });
-            output.push(`Received books: ${bookOutput.join(', ')}`);
+            output.push('Received books: ' + books.join(', '));
         });
 
         return output.join('\n');
