@@ -12,7 +12,7 @@ module.exports = {
             jsx: true,
         },
     },
-    "parser": "babel-eslint",
+    'parser': 'babel-eslint',
     rules: {
         indent: ['error', 4],
         'linebreak-style': 0,
