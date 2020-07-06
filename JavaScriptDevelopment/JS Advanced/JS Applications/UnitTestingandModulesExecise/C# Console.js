@@ -23,8 +23,6 @@ class Console {
                         b = Number(b.substring(1, b.length - 1));
                         return a - b;
                     });
-                // console.log(tokens);
-                // console.log(arguments);
                 if (tokens.length !== (arguments.length - 1)) {
                     throw new RangeError('Incorrect amount of parameters given!');
                 } else {
