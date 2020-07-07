@@ -93,7 +93,6 @@ const controllers = {
 
         res.writeHead(200, headers);
         res.end();
-
     }
 };
 
