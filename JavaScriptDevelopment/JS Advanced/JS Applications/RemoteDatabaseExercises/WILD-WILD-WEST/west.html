@@ -5,7 +5,7 @@
     <title>Wild Wild West</title>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="loadCanvas.js"></script>
-    <script src="attachEvents.js"></script>
+    <script type="module" src="attachEvents.js"></script>
     <link href="./styles.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -13,7 +13,7 @@
     <button style="display: none;" id="save">Save</button>
     <button style="display: none;" id="reload">Reload</button>
 </div>
-<canvas style="display: block;" width="800" height="600" style="border: 5px solid orange" id="canvas">Canvas not
+<canvas style="display: none;" width="800" height="600" style="border: 5px solid orange" id="canvas">Canvas not
     supported
 </canvas>
 <fieldset>
@@ -28,8 +28,7 @@
     <button id="addPlayer">Add Player</button>
 </fieldset>
 <script>
-    $(document)
-        .ready(attachEvents);
+
 </script>
 </body>
 </html>
