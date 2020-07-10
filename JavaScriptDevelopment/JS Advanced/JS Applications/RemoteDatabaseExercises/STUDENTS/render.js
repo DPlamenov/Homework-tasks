@@ -1,6 +1,7 @@
 const tableBody = document.querySelector('#results tbody');
 const createButton = document.querySelector('#create');
 const form = document.querySelector('form');
+const error = document.querySelector('#error');
 
 let createHandler = undefined;
 
@@ -59,7 +60,14 @@ createButton.addEventListener('click', (e) => {
         return acc;
     }, {});
 
-    createHandler(student);
+    if (Object.values(student)
+        .includes('')) {
+        error.classList.remove('hidden');
+    } else {
+        error.classList.add('hidden');
+        createHandler(student);
+        clearInputFields();
+    }
 
-    clearInputFields();
 });
+
