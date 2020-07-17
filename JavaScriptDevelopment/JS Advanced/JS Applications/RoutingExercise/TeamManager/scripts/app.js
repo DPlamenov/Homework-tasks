@@ -57,7 +57,6 @@ const app = new Sammy('#main', function () {
         extend(context)
             .then(function () {
                 const data = { ...context.params };
-
                 user.login(data.username, data.password)
                     .then(function (user) {
                         if (user.message) {
