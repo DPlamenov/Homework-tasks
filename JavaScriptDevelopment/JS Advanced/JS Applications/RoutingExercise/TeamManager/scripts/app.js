@@ -11,8 +11,11 @@ function extend(context, templates) {
     };
 
     context.loggedIn = localStorage.getItem('userId') !== null;
-    context.username = localStorage.getItem('username');
     context.hasNoTeam = localStorage.getItem('teamId') === 'null';
+    context.username = localStorage.getItem('username');
+    context.teamId = localStorage.getItem('teamId');
+    context.hasTeam = !context.hasNoTeam;
+
     if (Array.isArray(templates)) {
         templates.forEach(template => {
             const templateName = template.split('/')
@@ -196,6 +199,22 @@ const app = new Sammy('#main', function () {
                     comment
                 })
                     .then(function () {
+                        context.redirect('#/catalog');
+                    });
+            });
+    });
+
+    this.get('#/join/:teamId', function (context) {
+        extend(context)
+            .then(function () {
+                const data = { ...context.params };
+
+                const token = localStorage.getItem('userToken');
+                const userId = localStorage.getItem('userId');
+
+                user.changeTeamId(token, userId, data.teamId)
+                    .then(function () {
+                        localStorage.setItem('teamId', data.teamId);
                         context.redirect('#/catalog');
                     });
             });
