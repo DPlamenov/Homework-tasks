@@ -1,5 +1,6 @@
 // TODO
 import * as user from './user.js';
+import * as teams from './teams.js';
 
 const templatesUrl = './templates';
 
@@ -10,6 +11,8 @@ function extend(context, templates) {
     };
 
     context.loggedIn = localStorage.getItem('userId') !== null;
+    context.username = localStorage.getItem('username');
+    context.hasNoTeam = localStorage.getItem('teamId') === 'null';
 
     if (Array.isArray(templates)) {
         templates.forEach(template => {
@@ -65,6 +68,8 @@ const app = new Sammy('#main', function () {
                         }
                         localStorage.setItem('userId', user.objectId);
                         localStorage.setItem('userToken', user['user-token']);
+                        localStorage.setItem('username', user.username);
+                        localStorage.setItem('teamId', user.teamId || null);
                         context.redirect('#/home');
                     });
             });
@@ -96,7 +101,27 @@ const app = new Sammy('#main', function () {
     this.get('#/catalog', function (context) {
         extend(context, ['catalog/team'])
             .then(function () {
-                this.partial('./templates/catalog/teamCatalog.hbs');
+                teams.getAll()
+                    .then((data) => {
+                        context.teams = data;
+                        this.partial('./templates/catalog/teamCatalog.hbs');
+                    });
+            });
+    });
+
+    this.get('#/create', function (context) {
+        extend(context, ['create/createForm'])
+            .then(function () {
+                this.partial('./templates/create/createPage.hbs');
+            });
+    });
+
+    this.post('#/create', function (context) {
+        extend(context)
+            .then(function () {
+                const data = { ...context.params };
+
+                console.log(data);
             });
     });
 });
