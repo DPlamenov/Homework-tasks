@@ -32,7 +32,7 @@ export function logout(token) {
     });
 }
 
-export function changeTeamId(userId, token, teamId) {
+export function changeTeamId(token, userId, teamId) {
     return fetch(`${server}/${userId}`, {
         method: 'put',
         headers: {

@@ -120,10 +120,20 @@ const app = new Sammy('#main', function () {
         extend(context)
             .then(function () {
                 const data = { ...context.params };
+                const token = localStorage.getItem('userToken');
+                const userId = localStorage.getItem('userId');
 
-                console.log(data);
+                teams.create(data, token)
+                    .then(function (team) {
+                        user.changeTeamId(token, userId, team.objectId)
+                            .then(function () {
+                                localStorage.setItem('teamId', team.objectId);
+                                context.redirect('#/catalog');
+                            });
+                    });
             });
     });
+
 });
 
 

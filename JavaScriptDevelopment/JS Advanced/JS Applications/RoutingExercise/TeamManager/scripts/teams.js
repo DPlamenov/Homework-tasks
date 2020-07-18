@@ -4,3 +4,15 @@ export function getAll() {
     return fetch(`${backendlessUserUrl}`)
         .then(response => response.json());
 }
+
+export function create(data, userToken) {
+    return fetch(`${backendlessUserUrl}`, {
+        method: 'post',
+        headers: {
+            'Content-type': 'application/json',
+            'user-token': userToken
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => response.json());
+}
