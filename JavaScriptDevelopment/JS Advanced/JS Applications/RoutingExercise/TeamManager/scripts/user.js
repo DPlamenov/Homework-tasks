@@ -43,3 +43,13 @@ export function changeTeamId(token, userId, teamId) {
     })
         .then(response => response.json());
 }
+
+export function getUsersByTeamId(teamId) {
+    const userDatabase = 'https://api.backendless.com/A8C90F3F-AC4F-1E36-FFD5-580AFA50C600/A621851B-B774-418F-B02F-1D9299E8D56D/data/users';
+
+    return fetch(userDatabase)
+        .then(response => response.json())
+        .then(function (result) {
+            return result.filter(e => e.teamId === teamId);
+        });
+}

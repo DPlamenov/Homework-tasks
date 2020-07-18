@@ -13,7 +13,6 @@ function extend(context, templates) {
     context.loggedIn = localStorage.getItem('userId') !== null;
     context.username = localStorage.getItem('username');
     context.hasNoTeam = localStorage.getItem('teamId') === 'null';
-
     if (Array.isArray(templates)) {
         templates.forEach(template => {
             const templateName = template.split('/')
@@ -134,6 +133,47 @@ const app = new Sammy('#main', function () {
             });
     });
 
+    this.get('#/catalog/:teamId', async function (context) {
+        extend(context, ['catalog/teamControls', 'catalog/teamMember'])
+            .then(function () {
+                const teamId = { ...context.params }.teamId;
+
+                teams.getTeamById(teamId)
+                    .then((currentTeam) => {
+                        context.name = currentTeam.name;
+
+                        user.getUsersByTeamId(currentTeam.objectId)
+                            .then((members) => {
+                                context.members = members;
+                                context.comment = currentTeam.comment;
+                                context.isAuthor = currentTeam.ownerId === localStorage.getItem('userId');
+                                context.isOnTeam = currentTeam.objectId === localStorage.getItem('teamId');
+                                this.partial('./templates/catalog/details.hbs');
+                            });
+                    });
+            });
+    });
+
+    this.get('#/leave', function (context) {
+        extend(context)
+            .then(function () {
+                const token = localStorage.getItem('userToken');
+                const userId = localStorage.getItem('userId');
+
+                user.changeTeamId(token, userId, null)
+                    .then(function () {
+                        localStorage.setItem('teamId', null);
+                        context.redirect('#/catalog');
+                    });
+            });
+    });
+
+    this.get('#/edit', function (context) {
+        extend(context, ['edit/editForm'])
+            .then(function () {
+                this.partial('./templates/edit/editPage.hbs');
+            });
+    });
 });
 
 
