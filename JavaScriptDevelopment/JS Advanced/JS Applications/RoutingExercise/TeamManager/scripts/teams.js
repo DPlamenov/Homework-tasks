@@ -23,3 +23,13 @@ export function getTeamById(id) {
     })
         .then(response => response.json());
 }
+
+export function updateTeam(teamId, userToken, data) {
+    return fetch(`${server}/${teamId}`, {
+        method: 'put',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+}

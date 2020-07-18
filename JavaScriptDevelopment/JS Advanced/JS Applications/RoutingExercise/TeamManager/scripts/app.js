@@ -141,13 +141,13 @@ const app = new Sammy('#main', function () {
                 teams.getTeamById(teamId)
                     .then((currentTeam) => {
                         context.name = currentTeam.name;
-
+                        context.comment = currentTeam.comment;
+                        context.isAuthor = currentTeam.ownerId === localStorage.getItem('userId');
+                        context.isOnTeam = currentTeam.objectId === localStorage.getItem('teamId');
+                        context.objectId = currentTeam.objectId;
                         user.getUsersByTeamId(currentTeam.objectId)
                             .then((members) => {
                                 context.members = members;
-                                context.comment = currentTeam.comment;
-                                context.isAuthor = currentTeam.ownerId === localStorage.getItem('userId');
-                                context.isOnTeam = currentTeam.objectId === localStorage.getItem('teamId');
                                 this.partial('./templates/catalog/details.hbs');
                             });
                     });
@@ -168,10 +168,36 @@ const app = new Sammy('#main', function () {
             });
     });
 
-    this.get('#/edit', function (context) {
+    this.get('#/edit/:teamId', function (context) {
         extend(context, ['edit/editForm'])
             .then(function () {
-                this.partial('./templates/edit/editPage.hbs');
+                const teamId = context.params.teamId;
+
+                teams.getTeamById(teamId)
+                    .then(team => {
+                        context.name = team.name;
+                        context.comment = team.comment;
+                        context.teamId = team.objectId;
+                        this.partial('./templates/edit/editPage.hbs');
+                    });
+            });
+    });
+
+    this.post('#/edit/:teamId', function (context) {
+        extend(context)
+            .then(function () {
+                const data = { ...context.params };
+
+                const name = data.name;
+                const comment = data.comment;
+
+                teams.updateTeam(data.teamId, localStorage.getItem('userToken'), {
+                    name,
+                    comment
+                })
+                    .then(function () {
+                        context.redirect('#/catalog');
+                    });
             });
     });
 });
