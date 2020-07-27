@@ -26,6 +26,5 @@
 
     function renderCatTemplate() {
         allCats.innerHTML = templateCats({ cats });
-
     }
 })();
