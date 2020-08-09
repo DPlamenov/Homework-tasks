@@ -8,6 +8,9 @@ function f(num) {
         num = condenseArray;
     }
     console.log(condenseArray[0]);
+
+
+
 }
 
 f([1, 2]);
