@@ -1,21 +1,12 @@
-function solve(input) {
-    let string = input[0];
-    let journal = {};
+function solve([string]) {
+    const journal = {};
 
-    string.split('').forEach((element, index) => {
-        if(!journal.hasOwnProperty(element)){
-            journal[element] = [];
-        }
-        journal[element].push(index);
-    });
+    for (const index in string) {
+        const char = string[index];
+        journal[char] = (journal[char] || []).concat(index);
+    }
 
-    Object.entries(journal).sort((a, b) => {
-        return a[1].length - b[1].length;
-    }).forEach(element => {
-        let line = `${element[0]}:${element[1].join('/')}`;
-        console.log(line);
+    Object.entries(journal).forEach(([char, keys]) => {
+        console.log(`${char}:${keys.join('/')}`);
     });
 }
-
-
-solve([ 'abababa', '' ]);
