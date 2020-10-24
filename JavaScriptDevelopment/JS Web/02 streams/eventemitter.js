@@ -5,6 +5,14 @@ class EventEmitter {
 
   on(eventName, callback) {
     this.events[eventName] = (this.events[eventName] || []).concat(callback);
+
+    const unsub = () => {
+      this.events[eventName] = this.events[eventName].filter(cb => cb !== callback);
+    }
+
+    return {
+      unsub
+    };
   }
 
   emit(eventName, ...data) {
@@ -14,11 +22,10 @@ class EventEmitter {
 
 const emitter = new EventEmitter();
 
-emitter.on('data', (data) => {
-  console.log(data);
-});
+const event = emitter.on('data', console.log);
+emitter.on('data', console.log);
 
-emitter.emit('data', 123);
-setTimeout(() => {
-  emitter.emit('data', 321);
-}, 1500);
+// console.log(event);
+emitter.emit('data', 1);
+event.unsub();
+emitter.emit('data', 1);
