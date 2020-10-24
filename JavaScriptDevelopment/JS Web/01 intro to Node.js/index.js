@@ -25,9 +25,9 @@ const url = require('url');
 http.createServer((req, res) => {
   const path = url.parse(req.url).pathname;
 
-  if(path === '/') {
+  if (path === '/') {
     res.write('home page');
-  } else if(path === '/about'){
+  } else if (path === '/about') {
     res.write('about page');
   } else {
     res.writeHead(404);
