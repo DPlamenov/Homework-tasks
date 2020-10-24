@@ -4,10 +4,14 @@ class EventEmitter {
   }
 
   on(eventName, callback) {
-    this.events[eventName] = (this.events[eventName] || []).concat(callback);
+    const cb = function (...data) {
+      callback(...data);
+    }
+
+    this.events[eventName] = (this.events[eventName] || []).concat(cb);
 
     const unsub = () => {
-      this.events[eventName] = this.events[eventName].filter(cb => cb !== callback);
+      this.events[eventName] = this.events[eventName].filter(_cb => _cb !== cb);
     }
 
     return {
@@ -18,14 +22,19 @@ class EventEmitter {
   emit(eventName, ...data) {
     (this.events[eventName] || []).forEach(callback => callback(...data));
   }
+
+  once(eventName, callback) {
+    const event = this.on(eventName, function (data) {
+      callback(data);
+      event.unsub();
+    });
+  }
 }
 
 const emitter = new EventEmitter();
 
-const event = emitter.on('data', console.log);
-emitter.on('data', console.log);
+const event = emitter.once('data', console.log);
 
-// console.log(event);
 emitter.emit('data', 1);
-event.unsub();
+emitter.emit('data', 1);
 emitter.emit('data', 1);
