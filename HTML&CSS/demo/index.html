@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div>
+        <article id="first">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, quae!
+        </article>
+        <article id="second">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias aut delectus excepturi harum impedit ipsa ipsam iusto modi numquam odio officia, perferendis porro provident quia quidem repellat reprehenderit tempore. Culpa distinctio dolorem ducimus eveniet libero minima minus omnis ratione reiciendis sapiente! Accusamus cum cumque eius iste laborum molestiae voluptate!
+        </article>
+        <ul id="ul"></ul>
+        <input type="text" id="input"/>
+        <button id="addBtn">Add</button>
+    </div>
+    <script type="text/javascript">
+        const ulElement = document.getElementById('ul');
+        const inputElement = document.getElementById('input');
+        const addButtonElement = document.getElementById('addBtn');
+
+        addButtonElement.addEventListener('click', () => {
+          const inputValue = inputElement.value;
+          const currentListItemElement = document.createElement('li');
+          currentListItemElement.textContent = inputValue;
+          inputElement.value = '';
+          ulElement.appendChild(currentListItemElement);
+        });
+    </script>
+</body>
+</html>
