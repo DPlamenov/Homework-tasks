@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigation Inline Block</title>
+    <style>
+        body {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        header h1{
+            text-transform: uppercase;
+        }
+
+        header h1, header nav {
+            display: inline-block;
+        }
+
+        header nav {
+            margin-left: 80px;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: darkgreen;
+            margin-right: 15px;
+        }
+
+        header:after{
+            display: block;
+            width: 100%;
+            background-color: black;
+            height: 1px;
+            content: '';
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <h1>Site title</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Contacts</a>
+    </nav>
+</header>
+<main>
+    <h1>Heading level 1</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam architecto aut deleniti ducimus eum numquam
+        officia omnis porro quaerat quas quasi quo saepe tempore totam ullam, unde velit veniam. Consequatur, iure,
+        odio. Ad, aliquid aut dolore et facilis fugiat id itaque odio praesentium sint. Ea est fugit iusto soluta
+        velit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque dolor error est fuga laborum obcaecati
+        quas sequi, tempore voluptate.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur autem consequatur cum debitis dicta
+        doloremque eius, explicabo facilis, magnam magni molestiae nam necessitatibus nesciunt non porro, quisquam
+        similique temporibus?</p>
+</main>
+</body>
+</html>
