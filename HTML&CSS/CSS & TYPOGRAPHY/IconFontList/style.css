@@ -1,0 +1,13 @@
+@import "https://use.fontawesome.com/releases/v5.9.0/css/all.css";
+
+html {
+    font-family: sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+i {
+    margin-right: 8px;
+}

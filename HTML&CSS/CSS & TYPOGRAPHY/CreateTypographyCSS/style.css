@@ -1,0 +1,47 @@
+html {
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Georgia, serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table thead th{
+    text-align: left;
+    background-color: rgb(210, 210, 210);
+    padding: 5px;
+}
+
+table td {
+    padding: 5px;
+    width: 33%;
+    border: 1px solid rgb(210, 210, 210);
+}
+
+table tr:nth-child(odd) td{
+    background-color: rgb(243, 243, 243);
+}
+
+table tr:nth-child(even) td{
+    background-color: rgb(255, 255, 255);
+}
+
+blockquote {
+    font-style: italic;
+}
+
+blockquote footer.author {
+    text-align: right;
+}
