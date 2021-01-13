@@ -1,0 +1,28 @@
+@import "https://use.fontawesome.com/releases/v5.9.0/css/all.css";
+html {
+    font-family: serif;
+}
+
+p {
+    margin: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 5px;
+    border-radius: 3px;
+
+}
+
+#click-me a{
+    background-color: rgb(0, 139, 0);
+}
+
+#email a {
+    background-color: rgb(255, 151, 0);
+}
+
+i {
+    margin-right: 3px;
+}
