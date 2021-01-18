@@ -1,0 +1,35 @@
+html {
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    width: 50%;
+    margin: 0 auto;
+}
+
+header h1{
+    text-transform: uppercase;
+}
+
+header li, header h1 {
+    display: inline-block;
+}
+
+header nav {
+    margin-left: 10px;
+    display: inline-block;
+}
+
+header nav a {
+    text-decoration: none;
+    color: darkgreen;
+    margin-right: 15px;
+}
+
+header:after{
+    display: block;
+    width: 100%;
+    background-color: black;
+    height: 1px;
+    content: '';
+}
