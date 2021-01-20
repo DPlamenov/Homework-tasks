@@ -1,0 +1,18 @@
+body {
+    background: rgb(238, 238, 238);
+}
+
+article {
+    width: 70%;
+    float: left;
+}
+
+aside {
+    display: inline-block;
+    width: 20%;
+    margin-left: 5%;
+}
+
+section img {
+    width: 30%;
+}
