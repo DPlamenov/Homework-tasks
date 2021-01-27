@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("software-engineering/softuni/homeworks/HTML&CSS/exam/Exam_HTML5 & CSS - Retake Exam/03. Apartment/images/luxury-home.jpg") no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/luxury-home.jpg") no-repeat;
   background-size: cover;
   text-align: center;
   color: white;
@@ -156,7 +156,7 @@ main h2 {
 }
 
 .blog {
-  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("software-engineering/softuni/homeworks/HTML&CSS/exam/Exam_HTML5 & CSS - Retake Exam/03. Apartment/images/background-blog.jpg") no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("images/background-blog.jpg") no-repeat;
   background-size: cover;
   padding-bottom: 35px;
 }
