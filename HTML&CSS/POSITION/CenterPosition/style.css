@@ -1,0 +1,38 @@
+body {
+    background: rgb(238, 238, 238);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Georgia, serif;
+    font-size: 1em;
+}
+
+section {
+    position: relative;
+    width: 20%;
+    margin: 1% auto 0;
+    box-shadow: 5px 5px 15px 5px #919191;
+    background: rgb(255, 255, 255);
+}
+
+section #image img {
+    position: absolute;
+    width: 100%;
+}
+
+section #text {
+    padding: 30px 10px 50px;
+}
+
+button {
+    background: rgb(0, 153, 0);
+    float: right;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+}
