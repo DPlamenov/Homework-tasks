@@ -1,0 +1,28 @@
+header, main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+header h1 {
+    text-transform: uppercase;
+}
+
+header li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+header a {
+    color: rgb(0, 153, 0);
+}
+
+header nav ul {
+    display: flex;
+    align-content: center;
+}
