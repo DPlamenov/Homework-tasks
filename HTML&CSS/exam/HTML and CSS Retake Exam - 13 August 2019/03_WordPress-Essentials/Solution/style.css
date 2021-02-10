@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 body {
-    font-family: sans-serif;
-    background-color: #cdc7c7;
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+}
+
+.content {
+    max-width: 1080px;
+    margin: 0 auto;
 }
 
 * {
@@ -9,7 +16,7 @@ body {
 }
 
 header {
-    background-color: #274D70;
+    background-color: #203C5A;
     height: 80px;
 }
 
@@ -18,21 +25,24 @@ header i {
 }
 
 nav {
-    width: 80%;
+
     height: 75%;
-    margin: 0 auto;
-    padding: 20px 0 0;
+    padding: 10px 0 0;
+    margin-bottom: 15px;
 }
 
-nav button {
-    background-color: #FFAA00;
-    border: #FFAA00 1px solid;
+
+.btn {
+    background-color: #FAA600;
+    border: #FAA600 1px solid;
     padding: 10px 20px;
     color: white;
     font-weight: 700;
     border-radius: 20px;
     vertical-align: middle;
     margin-left: 30px;
+    text-transform: uppercase;
+    font-size: 14px;
 }
 
 #logo {
@@ -54,7 +64,7 @@ ul li {
     color: #9CABBA;
 }
 
-.float-right  {
+.float-right {
     margin: 5px auto;
     float: right;
     vertical-align: middle;
@@ -64,32 +74,174 @@ ul li {
     height: 50px;
     background-color: white;
     clear: both;
-
 }
 
-.white-nav div{
+.white-nav div {
     height: 100%;
     width: 80%;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    clear: both;
-
+    /*clear: both;*/
 }
 
 .white-nav div a {
-    color: #DB9800;
+    color: #FAA600;
     margin-right: 20px;
 }
 
 .white-nav div a.active {
     color: #274D70;
-    border-bottom:  1px solid #274D70;
+    border-bottom: 1px solid #274D70;
+}
+
+#course-title-wrapper {
+    background: url('../Requirements-and-Resources/images/details-background.png');
+    height: 200px;
+    margin-top: 38px;
+    background-size: cover;
+}
+
+#course-title h1 {
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    padding-top: 20px;
 }
 
 #course-title {
-    background: url('../Requirements-and-Resources/images/details-background.png');
-    height: 200px;
-    margin-top: 50px;
-    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+#course-title button {
+    align-self: center;
+    margin-top: 30px;
+    width: 20%;
+}
+
+.for-course {
+    margin-top: 30px;
+    background: #F4F4F4;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.for-course h2 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    /*border-bottom: 3px solid #DB9800;*/
+}
+
+.for-course h2:after {
+    content: '';
+    position: relative;
+    width: 11%;
+    display: block;
+    height: 3px;
+    margin: 0 auto;
+    background: #FAA600;
+}
+
+.for-course p {
+    line-height: 1.5;
+}
+
+.for-course button {
+    width: 25%;
+    margin: 20px 0;
+    align-self: center;
+}
+
+.course-info {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    color: white;
+}
+
+.course-info p {
+    margin-right: 30px;
+}
+
+.course-info i {
+    font-size: 26px;
+    margin-right: 5px;
+}
+
+#skills {
+    background: #F4F4F4;
+    padding: 20px 30px 40px;
+    margin-top: 30px;
+}
+
+#skills h2 {
+    text-align: center;
+}
+
+#skills h2:after {
+    content: '';
+    position: relative;
+    width: 37%;
+    display: block;
+    height: 3px;
+    margin: 0 auto;
+    background: #FAA600;
+}
+
+.skill-list li {
+    padding-bottom: 8px;
+    color: black;
+    margin-left: 20px;
+    width: 45%;
+    float: left;
+}
+
+.skill-list i {
+    margin-right: 5px;
+    color: #FAA600;
+    font-size: 22px;
+}
+
+#topics {
+    margin-top: 30px;
+    background: #F4F4F4;
+    padding: 20px 30px 40px;
+}
+
+.topics-list li {
+    margin: 8px 40px 5px 0;
+    padding: 5px 3px 5px 8px;
+    float: left;
+    width: 46.6%;
+    color: black;
+    background-color: #DFDFDF;
+    border-left: 5px solid #274D70;
+}
+
+.topics-list li:nth-child(even) {
+    margin: 8px 0 5px 0;
+}
+
+#topics h2 {
+    text-align: center;
+}
+
+#topics h2:after {
+    content: '';
+    position: relative;
+    width: 5%;
+    display: block;
+    height: 3px;
+    margin: 0 auto;
+    background: #FAA600;
+}
+
+#course-is-for {
+    margin-top: 30px;
+    padding: 20px 30px 40px;
+    background: #FAA600;
+    color: white;
 }

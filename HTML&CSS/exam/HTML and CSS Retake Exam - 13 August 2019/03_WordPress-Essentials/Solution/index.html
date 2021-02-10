@@ -5,33 +5,100 @@
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-
 </head>
 <body>
-<div id="main">
+<main>
     <header>
-        <nav>
-            <img src="../Requirements-and-Resources/images/software-university-logo.svg" alt="" id="logo">
-            <button>Кандидатствай</button>
-            <div class="float-right">
-                <ul>
-                    <li>ЗА НАС</li>
-                    <li>ОБУЧЕНИЯ</li>
-                    <li>КОНТАКТИ</li>
-                    <i class="fas fa-search"></i>
-                </ul>
-                <button>Вход</button>
-            </div>
-        </nav>
-        <div class="white-nav">
-            <div>
+        <article class="content">
+            <nav>
+                <img src="../Requirements-and-Resources/images/software-university-logo.svg" alt="" id="logo">
+                <button class="btn">Кандидатствай</button>
+                <div class="float-right">
+                    <ul>
+                        <li>ЗА НАС</li>
+                        <li>ОБУЧЕНИЯ</li>
+                        <li>КОНТАКТИ</li>
+                        <i class="fas fa-search"></i>
+                    </ul>
+                    <button class="btn">Вход</button>
+                </div>
+            </nav>
+        </article>
+
+        <article class="white-nav">
+            <div class="content">
                 <a>Софтуерно инженерство</a>
                 <a class="active">Отворени курсове и модули</a>
             </div>
-        </div>
+        </article>
     </header>
 
-    <div id="course-title"></div>
-</div>
+    <section id="course-title-wrapper">
+        <section id="course-title" class="content">
+            <h1>WordPress Essentials - август 2019</h1>
+            <article class="course-info">
+                <p><i class="fas fa-play-circle"></i>13 август 2019</p>
+                <p><i class="fas fa-file-alt"></i>29 септември 2019</p>
+                <p><i class="far fa-clock"></i>4 седмици</p>
+                <p><i class="fas fa-graduation-cap"></i>3 кредита</p>
+            </article>
+            <button class="btn">Заяви участие</button>
+        </section>
+    </section>
+
+    <section id="main">
+        <article class="for-course content">
+            <h2>За курса</h2>
+            <p>
+                Курсът WordPress Essentials изгражда базови технически умения по разработка на уеб сайтове с WordPress:
+                настройка на хостинг и домейн, инсталиране и конфигуриране на WordPress (WP), инсталиране и
+                конфигуриране на теми (themes) и добавки (plugins), създаване и редактиране на уеб съдържание (ръчно и с
+                визуални уеб редактори), създаване на страници, публикации, снимки и мултимедия. Изучават се популярни
+                WP теми и добавки (плъгини) и техните възможности за създаване на формуляри (forms), контакти,
+                фото-галерии, форуми, електронни магазини и други. Въвеждат се базови познания по изграждане на
+                собствена WP тема с HTML, CSS и PHP WP.
+            </p>
+            <button class="btn">Заяви участие</button>
+        </article>
+        <article id="skills" class="content">
+            <h2>УМЕНИЯ, КОИТО ЩЕ ПРИДОБИЕШ</h2>
+            <ul class="skill-list">
+                <li><i class="fas fa-graduation-cap"></i>Инсталация и настройка на WordPress</li>
+                <li><i class="fas fa-graduation-cap"></i>Създаване на цялостни WordPress сайтове</li>
+                <li><i class="fas fa-graduation-cap"></i>Работа с уеб хостинг, домейни и cPanel</li>
+                <li><i class="fas fa-graduation-cap"></i>Инсталация и настройка на теми и добавки</li>
+                <li><i class="fas fa-graduation-cap"></i>Създаване и промяна на собствени WP теми</li>
+                <li><i class="fas fa-graduation-cap"></i>Работа по практически проект изграден с WordPress</li>
+            </ul>
+        </article>
+        <article id="topics" class="content">
+            <h2>ТЕМИ</h2>
+            <ul class="topics-list">
+                <li>1 RESOURCES</li>
+                <li>2 COURSE INTRODUCTION</li>
+                <li>3 INTRODUCTION TO WORDPRESS</li>
+                <li>4 EXERCISE: INTRODUCTION TO WORDPRESS</li>
+                <li>5 POPULAR WORDPRESS THEMES</li>
+                <li>6 EXERCISE: POPULAR WORDPRESS THEMES</li>
+                <li>7 USING WORDPRESS PLUGINS</li>
+                <li>8 EXERCISE: USING WORDPRESS PLUGINS</li>
+                <li>9 WORKSHOP: A REAL LIFE EXAMPLE</li>
+                <li>10 CREATING CUSTOM WORDPRESS THEME</li>
+                <li>11 EXERCISE: CREATING CUSTOM WORDPRESS THEME</li>
+                <li>12 CONSULTING DAY</li>
+                <li>13 PROJECT DEFENCES</li>
+                <li>14 RETAKE EXAM (PROJECT DEFENCES)</li>
+            </ul>
+        </article>
+        <article id="course-is-for" class="content">
+            <h2>ЗА КОГО Е ПОДХОДЯЩ КУРСА?</h2>
+            <p>Курсът е подходящ както за начинаещи, така и за хора, с опит в програмирането, които искат да научат
+                повече за разработката на уебсайтове с WordPress. Необходима е компютърна грамотност (работа с файлове,
+                текстов редактор и браузър, инсталиране и конфигуриране на софтуер) и функционално владеене на английски
+                език.
+            </p>
+        </article>
+    </section>
+</main>
 </body>
 </html>
