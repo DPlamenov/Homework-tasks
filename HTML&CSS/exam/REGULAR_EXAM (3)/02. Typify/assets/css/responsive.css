@@ -1,0 +1,35 @@
+@media only screen and (max-width: 600px) {
+
+    .banner h2 {
+        width: 90%;
+    }
+
+    ul.actions li:last-child, .banner .button.special {
+        width: 90%;
+    }
+
+    .wrapper > .inner.narrow, .wrapper > .inner {
+        width: unset;
+    }
+
+    .feature {
+        flex-basis: 100%;
+    }
+
+    .grid-form .form-control.narrow, .grid-form .form-control {
+        margin: 0 auto;
+        flex-basis: 90%;
+    }
+
+    .grid-form .actions {
+        margin: 20px 0;
+    }
+
+    .wrapper.style2 {
+        padding-bottom: 1em;
+    }
+
+    .wrapper.style2 input[type="submit"] {
+        width: 100%;
+    }
+}
