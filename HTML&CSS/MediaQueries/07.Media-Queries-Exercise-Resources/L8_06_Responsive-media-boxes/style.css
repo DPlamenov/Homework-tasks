@@ -1,0 +1,39 @@
+html {
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    background: rgb(238, 238, 238);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Georgia', serif;
+}
+
+section {
+    background-color: rgb(255, 255, 255);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+img {
+    width: 100%;
+}
+
+section div:nth-child(2) {
+    padding: 20px 20px 40px 20px;
+}
+
+button {
+    background: rgb(254, 254, 254);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 12px;
+    float: right;
+}
