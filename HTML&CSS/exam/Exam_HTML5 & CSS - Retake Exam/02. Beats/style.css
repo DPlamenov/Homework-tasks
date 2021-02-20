@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 
-
 html {
-
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -39,10 +37,9 @@ section {
 }
 
 article {
-    width: 90%;
-    height: 500px;
-    /*margin-left: auto;*/
-    /*padding-left: auto;*/
+    width: 80%;
+    height: 700px;
+    position: relative;
 }
 
 article h1 {
@@ -53,8 +50,10 @@ article h1 {
 }
 
 article img {
-    position: relative;
+    position: absolute;
     width: 30%;
+    top: 0;
+    right: 0;
 }
 
 article p {
@@ -72,6 +71,7 @@ button {
 }
 
 #solo-wireless {
+    margin-top: 50px;
     padding-left: 150px;
 }
 
@@ -131,7 +131,6 @@ button {
     margin: 20px 0 50px;
 }
 
-
 #try-now img {
     width: 3%;
     vertical-align: middle;
@@ -158,11 +157,12 @@ button {
 }
 
 #images {
+    display: flex;
     flex-direction: row;
 }
 
 #images article {
-    height: auto;
+    height: 70vh;
 }
 
 #images img {
@@ -171,8 +171,6 @@ button {
 }
 
 #images img.small-img {
-    /*margin: 0 auto;*/
-    /*position: relative;*/
     float: right;
     padding-top: 100px;
     margin: 50px;
@@ -190,8 +188,41 @@ button {
 }
 
 #beats-red-article {
-    display: inline;
+    display: flex;
+    flex-direction: column;
     position: relative;
-    top: 20%;
     left: 20%;
+}
+
+#powerbeats {
+    position: relative;
+}
+
+#powerbeats img {
+    width: 25%;
+    left: 100px;
+    position: absolute;
+}
+
+.first-image-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#beats-red-article p {
+    display: inline;
+    font-size: 26px;
+    font-weight: 100;
+}
+
+span.red {
+    color: red;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+footer {
+    background: white;
+    text-align: center;
 }
