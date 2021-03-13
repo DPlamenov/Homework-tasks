@@ -1,0 +1,223 @@
+@import url("https://use.fontawesome.com/releases/v5.15.2/css/all.css");
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    height: 50px;
+    max-width: 1200px;
+    padding: 5px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.header {
+    -webkit-box-shadow: 4px 1px 17px 4px rgba(0, 0, 0, 0.44);
+    box-shadow: 4px 1px 17px 4px rgba(0, 0, 0, 0.44);
+    position: relative;
+    z-index: 1;
+    background: #4ac5b6;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-wrapper img {
+    height: 70%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav li a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.lecturer {
+    color: white;
+    background: #ffbc02;
+    text-align: center;
+    padding: 40px 0 60px;
+    margin-bottom: 50px;
+}
+
+.lecturer h2 {
+    margin: 0 0 20px;
+    font-size: 32px;
+}
+
+.lecturer p {
+    font-size: 14px;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.directors {
+    padding: 20px 300px;
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.director-info h3 {
+    margin: 0;
+    color: #5bccc4
+}
+
+.director-title {
+    font-size: 12px;
+    margin: 0;
+}
+
+.director-info p {
+    margin-bottom: 0;
+    color: gray;
+}
+
+.director {
+    margin-right: 50px;
+    display: flex;
+    flex-basis: 50%;
+}
+
+.image-wrapper {
+    margin-right: 20px;
+}
+
+.image-wrapper img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #4ac5b6;
+}
+
+.lecturers {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 100px auto 0 auto;
+    justify-content: center;
+}
+
+.lecture-picture {
+    margin-right: 100px;
+}
+
+.lecture-picture h3 {
+    text-align: center;
+    color: #4ac5b6;
+    margin-bottom: 2px;
+}
+
+.lecture-picture p {
+    font-size: 14px;
+    color: gray;
+    margin: 0;
+    text-align: center;
+}
+
+.softuni-team {
+    background: #71c1f9;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 100px;
+}
+
+.softuni-team input {
+    background: transparent;
+    color: white;
+    padding: 12px;
+    border: 1px solid white;
+    border-radius: 8px;
+}
+
+input::placeholder {
+    color: white;
+}
+
+form button {
+    background: #ff9c00;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px;
+    -webkit-box-shadow: 4px 5px 17px 1px rgba(0, 0, 0, 0.62);
+    box-shadow: 4px 5px 17px 1px rgba(0, 0, 0, 0.62);
+}
+
+.softuni-team h2 {
+    margin-top: 40px;
+}
+
+.softuni-team::before {
+    background: #9dd3fc;
+    content: '';
+    width: 100%;
+    height: 10px;
+}
+
+.softuni-team::after {
+    background: #9c9c9c;
+    content: '';
+    width: 100%;
+    height: 10px;
+    position: relative;
+    top: 100px;
+}
+
+.footer-wrapper {
+    background: #616161;
+}
+
+footer {
+    display: flex;
+    color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 15px 0 15px 0;
+}
+
+footer ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+footer li {
+    margin-bottom: 5px;
+}
+
+footer li a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+footer i {
+    font-size: 20px;
+    margin-right: 5px;
+}

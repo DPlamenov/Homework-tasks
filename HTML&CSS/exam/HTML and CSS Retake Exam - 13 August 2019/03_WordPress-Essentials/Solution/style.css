@@ -245,3 +245,132 @@ ul li {
     background: #FAA600;
     color: white;
 }
+
+#course-is-for h2 {
+    text-align: center;
+}
+
+#more-info {
+    padding: 20px 30px 40px;
+    margin-top: 30px;
+    background: #F4F4F4;
+}
+
+#more-info h3 {
+    color: #FAA600;
+}
+
+#more-info p {
+    margin-bottom: 10px;
+}
+
+.onsite-online {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    position: relative;
+    top: 50px
+}
+
+.onsite {
+    padding: 5px 15px;
+    justify-content: space-between;
+    align-items: flex-start;
+    display: flex;
+    background: #274d70;
+}
+
+.online {
+    padding: 5px 15px;
+    align-items: flex-start;
+    justify-content: space-between;
+    display: flex;
+    background: #ffaa00;
+}
+
+.onsite-online p {
+    font-weight: bold;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.onsite-online ul {
+    margin-right: 100px;
+    margin-top: 0;
+}
+
+.onsite-online li {
+    color: white;
+    display: block;
+    margin-bottom: 2px;
+}
+
+#lecturer {
+    padding: 20px 30px 40px;
+    margin-top: 30px;
+    background: #F4F4F4;
+}
+
+#lecturer h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.lecturer-info {
+    display: flex;
+    align-items: center;
+}
+
+.lecturer-info .lecturer-image-wrapper {
+    margin-right: 40px;
+}
+
+.lecturer-info p {
+    line-height: 1.6;
+}
+
+.lecturer-info h4 {
+    font-size: 22px;
+    color: #274D70;
+    margin-bottom: 10px;
+}
+
+.lecturer-info img {
+    border-radius: 50%;
+    width: 100px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.center-btn {
+    display: block;
+    margin: 20px auto;
+}
+
+footer {
+    background: #173149;
+    color: white;
+}
+
+footer h6 {
+    color: #ffb300;
+}
+
+.footer-content {
+    padding: 20px 0;
+    display: flex;
+}
+
+.footer-nav-container {
+    display: flex;
+}
+
+.footer-nav {
+    flex-grow: 1;
+}
+
+footer li {
+    display: block;
+}
