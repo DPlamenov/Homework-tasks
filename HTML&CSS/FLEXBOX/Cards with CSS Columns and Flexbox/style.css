@@ -14,7 +14,6 @@ article {
     flex-direction: column;
 }
 
-
 .masonry {
     column-count: 3;
     column-gap: 2rem;
